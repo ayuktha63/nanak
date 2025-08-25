@@ -1,10 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General body and heading styles */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling to sections */
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+}
+
+/* Header Styles */
+.header {
+  position: fixed; /* Makes the header sticky at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center; /* Center the wrapper */
+  align-items: center;
+  z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+/* New Wrapper for Centering Header Content */
+.header-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px; /* The desired max width */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container a {
+  display: flex;
+}
+
+/* Responsive Logo Styles */
+.logo {
+  width: 80%; /* Adjust the logo width as a percentage */
+  max-width: 255px; /* Cap the max width for larger screens */
+  height: auto;
+}
+
+/* Navigation Styles for Desktop */
+.nav-links-desktop {
+  display: none; /* Hide by default */
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0070f3; /* Example hover color */
+}
+
+/* Hamburger Menu Styles for Mobile and Tablet */
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: block; /* Hamburger is now always displayed on smaller screens */
+}
+
+/* Navigation Styles for Mobile */
+.nav-links-mobile {
+  position: absolute;
+  top: 100%; /* Position below the header */
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-link-mobile {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-link-mobile:last-child {
+  border-bottom: none;
+}
+
+/* Section Styles (for demonstration) */
+.main-content {
+  padding-top: 80px; /* Adjust this to prevent content from hiding behind the fixed header */
+}
+
+.section {
+  padding: 4rem 2rem;
+  min-height: 50vh; /* Makes sections full height for better scrolling demo */
+}
+
+.title {
+  margin-top: 0;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 767px) {
+  .header {
+    padding-left: 0px;
+    justify-content: space-between; /* Space between logo and hamburger */
+  }
+
+  .header-content-wrapper {
+    padding: 0 1rem; /* Add padding for mobile to prevent content from touching edges */
+  }
+}
+
+/* Media Query for Desktop */
+@media (min-width: 1024px) {
+  .nav-links-desktop {
+    display: flex; /* Show desktop nav */
+  }
+
+  .hamburger-menu {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .nav-links-mobile {
+    display: none; /* Hide mobile menu */
+  }
+}
+
+/* Media query for large screens. */
+@media (min-width: 1440px) {
+  .header {
+    padding: 1rem 2rem; /* Restore padding on large screens */
+  }
+
+  .nav-links-desktop {
+    margin-right: 0;
+  }
+
+  .logo-container {
+    margin-left: 0;
+  }
+}
+
 /* Home Section Styles */
 .home-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  position: relative; /* This is the key change for positioning children */
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-box {
@@ -22,14 +186,10 @@
   overflow: hidden;
   padding: 2rem 0;
   gap: 2rem;
-  z-index: 2; /* Ensures the hero-box is on top of the person image */
+  z-index: 2;
 }
 
 .hero-image-container {
-  /*
-    position: relative is necessary here for the Next.js Image component
-    to work correctly with layout="fill"
-  */
   position: relative;
   width: 100%;
   height: 100%;
@@ -47,7 +207,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  z-index: 3; /* Ensures content is on top of everything */
+  z-index: 3;
 }
 
 .hero-title {
@@ -110,7 +270,7 @@
   top: 50%;
   transform: translateY(-50%);
   right: 3rem;
-  z-index: 3; /* Ensure logo is above the person image */
+  z-index: 3;
 }
 
 .logo-box {
@@ -123,7 +283,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3; /* Ensure logo box is above the person image */
+  z-index: 3;
 }
 
 /* Media Queries for Responsiveness */
@@ -134,13 +294,13 @@
     gap: 0;
     z-index: 2;
   }
-  
+
   .hero-image-container {
     width: 50%;
     padding-left: 3rem;
     padding-right: 1.5rem;
   }
-  
+
   .hero-content-container {
     width: 50%;
     padding-left: 1.5rem;
@@ -151,20 +311,18 @@
     flex-direction: row;
   }
 
-  /* Added for the person image */
   .hero-person-container {
-    display: block; /* Make the container visible on desktop */
+    display: block;
     position: absolute;
-    left: 0; /* Align to the left edge of the hero-box */
-    bottom: 0; /* Align to the bottom edge */
+    left: 0;
+    bottom: 0;
     height: auto;
     width: auto;
-    z-index: 3; /* Place this container in a lower stacking order than the hero-box */
+    z-index: 3;
   }
 }
 
 @media (max-width: 1023px) {
-  /* Added to hide the image on mobile */
   .hero-person-container {
     display: none;
   }
@@ -172,7 +330,6 @@
 
 @media (max-width: 767px) {
   .hero-box {
-    /* height: auto; */
     width: auto;
     padding: 0rem 1rem;
     flex-direction: column;
@@ -183,7 +340,7 @@
   .hero-content-container {
     align-items: center;
     text-align: center;
-    padding: 0 1rem; /* Added left and right padding to content */
+    padding: 0 1rem;
   }
 
   .hero-title {
@@ -201,14 +358,13 @@
     width: 100%;
     align-items: center;
   }
-  
+
   .hero-logo-container {
     display: none;
   }
-  
-  /* Show and size the person SVG for mobile */
+
   .hero-person-container {
-    display: none; /* Hide the person SVG on mobile */
+    display: none;
   }
 }
 
@@ -217,18 +373,163 @@
     padding-left: 5rem;
     padding-right: 2rem;
   }
-  
+
   .hero-content-container {
     padding-left: 2rem;
     padding-right: 5rem;
     width: 1000px;
   }
 
-  /* Adjustments for the person image on larger screens */
   .hero-person-container {
     top: 112px;
-    left: -100px; /* Adjust the left position to move it into view and overlap */
+    left: -100px;
     height: 600px;
     width: auto;
+  }
+}
+
+/* Contact Us Section Styles */
+.contact-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.contact-content-wrapper {
+  display: flex; /* Default to flex for mobile column layout */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+/* Individual column styles */
+.contact-left {
+  display: none; /* Hidden by default on mobile */
+}
+
+.contact-middle {
+  text-align: center;
+  width: 100%;
+}
+
+.contact-right {
+  width: 100%;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.contact-title {
+  color: #000;
+  font-family: Raleway;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  color: #000;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 0;
+}
+
+.contact-details {
+  color: #000;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.contact-details p {
+  margin: 0.5rem 0;
+}
+
+.contact-form-container {
+  width: 100%;
+  max-width: 500px; /* Optional: Constrain form width on large screens */
+  margin: 0 auto; /* Center the form container on mobile/tablet */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Raleway, sans-serif;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-button {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 62px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #333;
+}
+
+.map-section {
+  padding: 2rem 0; /* Add padding to separate it from the form */
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+
+/* Desktop-specific styles for contact section */
+@media (min-width: 1024px) {
+  .contact-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .contact-left {
+    display: block; /* Show the image on desktop */
+  }
+
+  .contact-middle {
+    text-align: left;
   }
 }
