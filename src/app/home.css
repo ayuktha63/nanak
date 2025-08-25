@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
+  position: relative; /* This is the key change for positioning children */
 }
 
 .hero-box {
@@ -19,8 +20,9 @@
   background-color: #A7E231;
   height: 548px;
   overflow: hidden;
-  padding: 2rem 0; /* Adjusted padding: 2rem on top/bottom, 0 on left/right */
-  gap: 2rem; /* Added gap to simplify spacing */
+  padding: 2rem 0;
+  gap: 2rem;
+  z-index: 2; /* Ensures the hero-box is on top of the person image */
 }
 
 .hero-image-container {
@@ -39,12 +41,13 @@
 
 .hero-content-container {
   width: 100%;
-  padding: 2rem; /* Adjusted from 2rem 3rem to 2rem to be more balanced */
+  padding: 2rem;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  z-index: 3; /* Ensures content is on top of everything */
 }
 
 .hero-title {
@@ -107,6 +110,7 @@
   top: 50%;
   transform: translateY(-50%);
   right: 3rem;
+  z-index: 3; /* Ensure logo is above the person image */
 }
 
 .logo-box {
@@ -119,6 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3; /* Ensure logo box is above the person image */
 }
 
 /* Media Queries for Responsiveness */
@@ -126,23 +131,42 @@
   .hero-box {
     flex-direction: row;
     padding: 0;
-    gap: 0; /* Removing gap for desktop layout, as padding is used on child elements */
+    gap: 0;
+    z-index: 2;
   }
   
   .hero-image-container {
     width: 50%;
-    padding-left: 3rem; /* Add left padding to the image container */
+    padding-left: 3rem;
     padding-right: 1.5rem;
   }
   
   .hero-content-container {
     width: 50%;
-    padding-left: 1.5rem; /* Add left padding to the content container */
+    padding-left: 1.5rem;
     padding-right: 3rem;
   }
 
   .button-group {
     flex-direction: row;
+  }
+
+  /* Added for the person image */
+  .hero-person-container {
+    display: block; /* Make the container visible on desktop */
+    position: absolute;
+    left: 0; /* Align to the left edge of the hero-box */
+    bottom: 0; /* Align to the bottom edge */
+    height: auto;
+    width: auto;
+    z-index: 3; /* Place this container in a lower stacking order than the hero-box */
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Added to hide the image on mobile */
+  .hero-person-container {
+    display: none;
   }
 }
 
@@ -155,8 +179,14 @@
   .hero-content-container {
     padding-left: 2rem;
     padding-right: 5rem;
-    
     width: 1000px;
+  }
 
+  /* Adjustments for the person image on larger screens */
+  .hero-person-container {
+    top:112px;
+    left: -100px; /* Adjust the left position to move it into view and overlap */
+    height: 600px;
+    width: auto;
   }
 }

@@ -30,9 +30,21 @@ export default function Home() {
           We use separate CSS classes to lay out the hero section.
         */}
         <section id="home" className="home-section">
+          
+          {/* The person image container is now a sibling to the hero-box.
+            This is the key to fixing the z-index issue.
+          */}
+          <div className="hero-person-container">
+            <Image
+              src="/home-person.svg"
+              alt="A person performing a duct cleaning service"
+              width={500}
+              height={500}
+              className="hero-person-image"
+            />
+          </div>
+
           <div className="hero-box">
-            
-            {/* The image on the left has been removed */}
             
             {/* Content in the middle */}
             <div className="hero-content-container">
