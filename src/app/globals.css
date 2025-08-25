@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* General body and heading styles */
 html {
   scroll-behavior: smooth; /* Smooth scrolling to sections */
 }
-
 body {
   margin: 0;
   font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
-  background-color: #f0f0f0;
 }
 
 /* Header Styles */
@@ -17,7 +17,6 @@ body {
   left: 0;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -32,6 +31,13 @@ body {
 
 .logo-container a {
   display: flex;
+}
+
+/* Responsive Logo Styles */
+.logo {
+  width: 80%; /* Adjust the logo width as a percentage */
+  max-width: 255px; /* Cap the max width for larger screens */
+  height: auto;
 }
 
 /* Navigation Styles for Desktop */
@@ -51,13 +57,13 @@ body {
   color: #0070f3; /* Example hover color */
 }
 
-/* Hamburger Menu Styles for Mobile */
+/* Hamburger Menu Styles for Mobile and Tablet */
 .hamburger-menu {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  display: block; /* Show hamburger by default on mobile */
+  display: block; /* Hamburger is now always displayed on smaller screens */
 }
 
 /* Navigation Styles for Mobile */
@@ -95,15 +101,23 @@ body {
 
 .section {
   padding: 4rem 2rem;
-  min-height: 100vh; /* Makes sections full height for better scrolling demo */
+  min-height: 50vh; /* Makes sections full height for better scrolling demo */
 }
 
 .title {
   margin-top: 0;
 }
 
+/* Media Query for Mobile */
+@media (max-width: 767px) {
+  .header {
+    padding-left: 0px;
+    justify-content: space-between; /* Space between logo and hamburger */
+  }
+}
+
 /* Media Query for Desktop */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav-links-desktop {
     display: flex; /* Show desktop nav */
   }
@@ -135,3 +149,4 @@ body {
     margin-left: 20px; /* Reduced the left margin for a better balance */
   }
 }
+

@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Footer Styles */
+.main-footer {
+  background: #9ACD32;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* New container for the top row (copyright and links) */
+.footer-top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adjusted gap */
+  margin-bottom: 10px; /* Adjusted margin */
+  width: 100%; /* Ensure it takes full width for spacing */
+}
+
+.footer-copyright {
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.footer-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adjusted gap */
+}
+
+.footer-links-container a {
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links-container a:hover {
+  text-decoration: underline;
+}
+
+.footer-designed-by {
+  color: #014924;
+  font-family: Raleway, sans-serif;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.footer-designed-by a {
+  color: #014924;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-designed-by a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles for Desktop */
+@media (min-width: 768px) {
+  .main-footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-top-row {
+    flex-direction: row;
+    justify-content: center; /* Centered content */
+    align-items: center;
+    width: 100%;
+    max-width: 1380px; /* Match hero-box width for consistent layout */
+    gap: 40px; /* Increased gap to create more space between the two divisions */
+  }
+
+  .footer-copyright {
+    margin-bottom: 0;
+  }
+
+  .footer-links-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px; /* Adjusted gap */
+  }
+}

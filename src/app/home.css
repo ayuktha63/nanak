@@ -170,6 +170,48 @@
   }
 }
 
+@media (max-width: 767px) {
+  .hero-box {
+    /* height: auto; */
+    width: auto;
+    padding: 0rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content-container {
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem; /* Added left and right padding to content */
+  }
+
+  .hero-title {
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 4vw, 18px);
+    line-height: 1.4;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .hero-logo-container {
+    display: none;
+  }
+  
+  /* Show and size the person SVG for mobile */
+  .hero-person-container {
+    display: none; /* Hide the person SVG on mobile */
+  }
+}
+
 @media (min-width: 1440px) {
   .hero-image-container {
     padding-left: 5rem;
@@ -184,7 +226,7 @@
 
   /* Adjustments for the person image on larger screens */
   .hero-person-container {
-    top:112px;
+    top: 112px;
     left: -100px; /* Adjust the left position to move it into view and overlap */
     height: 600px;
     width: auto;

@@ -1,9 +1,11 @@
+// home.js
 import Header from '@/components/Header';
 import Head from 'next/head';
 import Image from 'next/image';
 
 // Import the dedicated CSS file for this page
 import './home.css';
+import Footer from '@/components/Footer'; // Import the new Footer component
 
 export default function Home() {
   return (
@@ -150,6 +152,11 @@ export default function Home() {
           </p>
         </section>
       </main>
+      
+      {/*
+        The Footer component is placed at the end of the page content.
+      */}
+      <Footer />
     </>
   );
 }
