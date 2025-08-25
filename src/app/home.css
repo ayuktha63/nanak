@@ -84,16 +84,6 @@ body {
   padding: 1rem 0;
 }
 
-.nav-link-mobile {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
 .nav-link-mobile:last-child {
   border-bottom: none;
 }
@@ -450,6 +440,15 @@ body {
   gap: 1rem;
 }
 
+.form-label {
+  align-self: flex-start; /* Aligns label to the left */
+  color: #000;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
 .form-input,
 .form-textarea {
   width: 100%;
@@ -474,6 +473,8 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 200px; /* Reduced width */
+  align-self: center;
 }
 
 .form-button:hover {
@@ -494,7 +495,6 @@ body {
   padding-top: 2rem;
 }
 
-
 /* Desktop-specific styles for contact section */
 @media (min-width: 1024px) {
   .contact-content-wrapper {
@@ -511,5 +511,84 @@ body {
 
   .contact-middle {
     text-align: left;
+  }
+}
+
+/* Areas We Serve Section Styles */
+.areas-title {
+  color: rgba(0, 0, 0, 0.76);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 2rem; /* Add space above the title */
+  margin-bottom: 2rem; /* Add space below the title */
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 2rem;
+}
+
+.areas-we-serve {
+  padding: 4rem 2rem;
+  background-color: #AEE441;
+  border-radius: 23px 300px 300px 23px;
+  width: 100%; /* Make it responsive */
+  max-width: 1358px;
+  height: 428px;
+  margin: 2rem auto 10rem auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.areas-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 200px; /* Make columns flexible */
+  max-width: 25%;
+}
+
+.areas-column p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.areas-column a {
+  color: white; /* Set link color to white */
+  text-decoration: none; /* Remove the underline */
+  transition: all 0.3s ease;
+}
+
+.areas-column a:hover {
+  text-decoration: underline; /* Add underline on hover for accessibility */
+}
+
+/* Adjustments for tablets and mobile */
+@media (max-width: 1023px) {
+  .areas-we-serve {
+    border-radius: 23px; /* Simpler border radius on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 2rem;
+    width: auto;
+  }
+
+  .areas-list {
+    flex-direction: column; /* Stack columns on top of each other */
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
 }

@@ -7,6 +7,14 @@ import Image from 'next/image';
 import './home.css';
 import Footer from '@/components/Footer'; // Import the new Footer component
 
+// Data for the areas we serve
+const areas = [
+  ['Toronto', 'Mississauga', 'Brampton', 'Etobicoke', 'Vaughan', 'North York', 'Milton', 'East York'],
+  ['Scarborough', 'Pickering', 'Ajax', 'Whitby', 'Acton', 'Aurora', 'Bolton', 'Brantford'],
+  ['Burlington', 'Caledon', 'Concord', 'Georgetown', 'Guelph', 'Markham', 'Newmarket', 'Oakville'],
+  ['Orangeville', 'Richmond Hill', 'Woodbridge', 'London', 'Windsor', 'Niagara Falls', 'Hamilton', 'Kitchener'],
+];
+
 export default function Home() {
   return (
     <>
@@ -173,11 +181,18 @@ export default function Home() {
             <div className="contact-right">
               <div className="contact-form-container">
                 <form className="contact-form">
-                  <input type="text" placeholder="Your Name" className="form-input" />
-                  <input type="email" placeholder="Email" className="form-input" />
-                  <input type="tel" placeholder="Phone Number" className="form-input" />
-                  <textarea placeholder="Message" className="form-textarea"></textarea>
-                  <button type="submit" className="form-button">Send</button>
+
+                  <input type="text" id="name" placeholder="Your Name" className="form-input" />
+                  
+
+                  <input type="email" id="email" placeholder="Email" className="form-input" />
+                  
+
+                  <input type="tel" id="phone" placeholder="Phone Number" className="form-input" />
+                  
+                  <textarea id="message" placeholder="Message" className="form-textarea"></textarea>
+                  
+                  <button type="submit" className="form-button small-button">Send</button>
                 </form>
               </div>
             </div>
@@ -188,6 +203,24 @@ export default function Home() {
         <section className="map-section">
           <div className="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5731747723944!2d-79.72572072433802!3d43.740192946800825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84d1c08d7e37c381%3A0xba0e7a9314944ed9!2sNanak%20duct%20cleaning!5e0!3m2!1sen!2sin!4v1756155577044!5m2!1sen!2sin" width="1100" height="300" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+
+        {/* New Areas We Serve Section */}
+        <h2 className="areas-title">Areas We Serve</h2>
+        <section id="areas-we-serve" className="areas-we-serve">
+          <div className="areas-list">
+            {areas.map((column, index) => (
+              <div key={index} className="areas-column">
+                {column.map((city) => (
+                  <p key={city}>
+                    <a href={`https://www.google.com/search?q=${encodeURIComponent(city)}`} target="_blank" rel="noopener noreferrer">
+                      {city}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
       </main>
