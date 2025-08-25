@@ -46,8 +46,8 @@ export default function Home() {
               <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
                 Duct Cleaning Services
               </h1>
-              <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
-                Improve your home's air quality with our expert cleaning.
+              <p className="hero-subtitle">
+                Improve your home&apos;s air quality with our expert cleaning.
               </p>
               
               <div className="button-group" data-aos="fade-up" data-aos-delay="600">
