@@ -1,5 +1,6 @@
 // layout.js
 import './globals.css';
+import AOSProvider from '@/components/AOSProvider'; // Import the new AOS Provider
 
 export const metadata = {
   title: 'Your Website Title',
@@ -15,9 +16,12 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
       </head>
       <body>
-        <div className="container-max-width"> {/* Added a wrapper div */}
-          {children}
-        </div>
+        {/* Wrap children with the AOSProvider */}
+        <AOSProvider>
+          <div className="container-max-width">
+            {children}
+          </div>
+        </AOSProvider>
       </body>
     </html>
   );

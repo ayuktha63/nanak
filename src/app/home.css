@@ -528,7 +528,7 @@ body {
 }
 
 .areas-we-serve {
-  padding: 4rem 2rem;
+  padding: 0rem 2rem;
   background-color: #AEE441;
   border-radius: 23px 300px 300px 23px;
   width: 100%; /* Make it responsive */
