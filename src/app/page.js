@@ -105,10 +105,21 @@ const ServicesSection = () => {
         {/* Corrected: Both extended-box and big-image-container are now children of service-details-row */}
         <div className="service-details-row">
           <div className="extended-box">
+            <div className="service-image-container">
+              <Image
+                src="/commercial-air-duct-cleaning.svg"
+                alt="Commercial Air Duct Cleaning"
+                width={200}
+                height={200}
+                className="service-image"
+              />
+            </div>
+            <div className='service-content-container'>
             <h3>Specialized Cleaning Solutions</h3>
             <p>
               We offer advanced services to meet specific needs, ensuring your entire HVAC system is in pristine condition.
             </p>
+            </div>
           </div>
         </div>
             </div>
