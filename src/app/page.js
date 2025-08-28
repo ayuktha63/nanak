@@ -107,8 +107,8 @@ const ServicesSection = () => {
           <div className="extended-box">
             <div className="service-image-container">
               <Image
-                src="/commercial-air-duct-cleaning.svg"
-                alt="Commercial Air Duct Cleaning"
+                src="/resedential_duct_cleaning.svg"
+                alt="Residential Duct Cleaning"
                 width={200}
                 height={200}
                 className="service-image"
