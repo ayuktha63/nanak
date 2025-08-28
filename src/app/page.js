@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: "How often should I have my air ducts cleaned?",
-    answer: "For most homes, it's recommended to have your air ducts cleaned every 3 to 5 years. However, if you have pets, allergies, or have recently completed a home renovation, you may want to clean them more frequently.",
+    answer: "For most homes, it&apos;s recommended to have your air ducts cleaned every 3 to 5 years. However, if you have pets, allergies, or have recently completed a home renovation, you may want to clean them more frequently.",
   },
   {
     question: "How long does a typical duct cleaning take?",
@@ -36,7 +36,7 @@ const faqData = [
   },
   {
     question: "What is included in a standard duct cleaning service?",
-    answer: "Our standard service includes a thorough cleaning of all supply and return vents, the main trunk lines, and the furnace's blower fan and cabinet. We also provide a complete inspection of your ductwork to ensure no issues are present.",
+    answer: "Our standard service includes a thorough cleaning of all supply and return vents, the main trunk lines, and the furnace&apos;s blower fan and cabinet. We also provide a complete inspection of your ductwork to ensure no issues are present.",
   },
 ];
 
@@ -54,7 +54,8 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
     </div>
   );
 };
-// New Services Section Component with Updated Layout
+
+// Services Section Component with Updated Layout
 const ServicesSection = () => {
   return (
     <section id="services" className="services-section">
@@ -64,80 +65,77 @@ const ServicesSection = () => {
       </p>
 
       <div className="services-container">
-        <div className='sample'>
+        <div className="sample">
           <div className="services-row">
             <div className="service-box">
               <div className="service-image-container">
                 <Image
                   src="/dryer-vent-cleaning.svg"
-                alt="Duct Cleaning"
-                width={200}
-                height={200}
-                className="service-image"
-              />
+                  alt="Duct Cleaning"
+                  width={200}
+                  height={200}
+                  className="service-image"
+                />
+              </div>
+              <div className="service-content-container">
+                <h5 className="service-heading">Duct Cleaning</h5>
+                <p className="service-description">
+                  Thorough cleaning to enhance air quality and system efficiency.
+                </p>
+              </div>
             </div>
-            <div className="service-content-container">
-              <h5 className="service-heading">Duct Cleaning</h5>
-              <p className="service-description">
-                Thorough cleaning to enhance air quality and system efficiency.
-              </p>
+            <div className="service-box">
+              <div className="service-image-container">
+                <Image
+                  src="/commercial-air-duct-cleaning.svg"
+                  alt="Commercial Air Duct Cleaning"
+                  width={200}
+                  height={200}
+                  className="service-image"
+                />
+              </div>
+              <div className="service-content-container">
+                <h5 className="service-heading">Furnace Cleaning</h5>
+                <p className="service-description">
+                  Comprehensive cleaning for better performance and energy savings.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="service-box">
-            <div className="service-image-container">
-              <Image
-                src="/commercial-air-duct-cleaning.svg"
-                alt="Commercial Air Duct Cleaning"
-                width={200}
-                height={200}
-                className="service-image"
-              />
-            </div>
-            <div className="service-content-container">
-              <h5 className="service-heading">Furnace Cleaning</h5>
-              <p className="service-description">
-                Comprehensive cleaning for better performance and energy savings.
-              </p>
-            </div>
-          </div>
-        </div>
 
-        {/* Corrected: Both extended-box and big-image-container are now children of service-details-row */}
-        <div className="service-details-row">
-          <div className="extended-box">
-            <div className="service-image-container">
-              <Image
-                src="/resedential_duct_cleaning.svg"
-                alt="Residential Duct Cleaning"
-                width={200}
-                height={200}
-                className="service-image"
-              />
+          <div className="service-details-row">
+            <div className="extended-box">
+              <div className="service-image-container">
+                <Image
+                  src="/resedential_duct_cleaning.svg"
+                  alt="Residential Duct Cleaning"
+                  width={200}
+                  height={200}
+                  className="service-image"
+                />
+              </div>
+              <div className="service-content-container">
+                <h3>Specialized Cleaning Solutions</h3>
+                <p>
+                  We offer advanced services to meet specific needs, ensuring your entire HVAC system is in pristine condition.
+                </p>
+              </div>
             </div>
-            <div className='service-content-container'>
-            <h3>Specialized Cleaning Solutions</h3>
-            <p>
-              We offer advanced services to meet specific needs, ensuring your entire HVAC system is in pristine condition.
-            </p>
+            <div className="big-image-container">
+              <Image
+                src="/seven-years-of-experience.svg"
+                alt="Our team at work"
+                width={1440}
+                height={500}
+                className="big-service-image"
+              />
             </div>
           </div>
         </div>
-            </div>
-          <div className="big-image-container">
-            <Image
-              src="/seven-years-of-experience.svg"
-              alt="Our team at work"
-              width={1440}
-              height={500}
-              className="big-service-image"
-            />
-          </div>
       </div>
     </section>
   );
 };
-
-// ... (rest of your Home component and CSS remains the same as previously provided)
 
 export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -156,9 +154,7 @@ export default function Home() {
       <Header />
 
       <main className="main-content">
-        {/*
-          Home Section
-        */}
+        {/* Home Section */}
         <section id="home" className="home-section" data-aos="fade-in">
           <div className="hero-person-container" data-aos="fade-right">
             <Image
@@ -176,15 +172,11 @@ export default function Home() {
                 Duct Cleaning Services
               </h1>
               <p className="hero-subtitle">
-                Improve your home's air quality with our expert cleaning.
+                Improve your home&apos;s air quality with our expert cleaning.
               </p>
               <div className="button-group" data-aos="fade-up" data-aos-delay="600">
-                <button className="book-now-button">
-                  Book Now
-                </button>
-                <button className="get-quote-button">
-                  Get a Free Quote
-                </button>
+                <button className="book-now-button">Book Now</button>
+                <button className="get-quote-button">Get a Free Quote</button>
               </div>
             </div>
             <div className="hero-logo-container">
@@ -201,22 +193,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/*
-          Services Section (New)
-        */}
+        {/* Services Section */}
         <ServicesSection />
 
-
-        {/*
-          About Us Section
-        */}
-<section id="about-us" className="section about-us-section" data-aos="fade-up">
+        {/* About Us Section */}
+        <section id="about-us" className="section about-us-section" data-aos="fade-up">
           <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
           <div className="about-us-box" data-aos="zoom-in">
             <p className="about-us-text">
-              We&apos;re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of a Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
+              We&apos;re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
               <br /><br />
-              After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable and high-quality duct cleaning services that homeowners and businesses can trust.
+              After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable, and high-quality duct cleaning services that homeowners and businesses can trust.
               <br /><br />
               Today, we proudly serve clients across Brampton, the Greater Toronto Area, and major cities throughout Ontario — helping create cleaner, healthier indoor environments with every job we take on.
               <br /><br />
@@ -225,9 +212,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/*
-          Testimonials Section
-        */}
+        {/* Testimonials Section */}
         <section id="testimonials" className="section container mx-auto" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
           <p className="text-lg text-gray-700">
@@ -235,9 +220,7 @@ export default function Home() {
           </p>
         </section>
 
-        {/*
-          FAQ Section (Accordion Style)
-        */}
+        {/* FAQ Section (Accordion Style) */}
         <section id="faq" className="section faq-section" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
           <div className="faq-container">
@@ -293,7 +276,15 @@ export default function Home() {
         {/* Map Section */}
         <section className="map-section" data-aos="fade-up">
           <div className="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5731747723944!2d-79.72572072433802!3d43.740192946800825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84d1c08d7e37c381%3A0xba0e7a9314944ed9!2sNanak%20duct%20cleaning!5e0!3m2!1sen!2sin!4v1756155577044!5m2!1sen!2sin" width="1100" height="300" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5731747723944!2d-79.72572072433802!3d43.740192946800825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84d1c08d7e37c381%3A0xba0e7a9314944ed9!2sNanak%20duct%20cleaning!5e0!3m2!1sen!2sin!4v1756155577044!5m2!1sen!2sin"
+              width="1100"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </section>
 

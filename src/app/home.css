@@ -727,7 +727,7 @@ body {
 
 /* Services Section Styles */
 .services-section {
-  padding: 4rem 2rem;
+  padding: 4rem 1rem; /* Reduced padding on mobile */
   text-align: center;
   max-width: 1440px;
   margin: 0 auto;
@@ -736,10 +736,10 @@ body {
 .services-title {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px); /* Responsive font size */
   font-style: normal;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.2;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -747,53 +747,56 @@ body {
 .services-subtitle {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px); /* Responsive font size */
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.4;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .services-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Stack elements vertically on all screens by default */
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem; /* Reduced gap for mobile */
 }
-.sample{
+
+.sample {
   display: flex;
   flex-direction: column;
-    align-items: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem; /* Reduced gap for mobile */
+  width: 100%;
 }
+
 .services-row {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  flex-direction: column; /* Stack service boxes vertically on mobile */
+  align-items: center;
+  gap: 1.5rem; /* Reduced gap for mobile */
   width: 100%;
   max-width: 1000px;
 }
 
 .service-box {
-  width: 475px;
-  height: 222px;
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for larger screens */
+  height: auto; /* Allow height to adjust based on content */
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 1.5rem;
+  padding: 1rem; /* Reduced padding for mobile */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column; /* Stack image and content vertically on mobile */
   align-items: center;
-  text-align: left;
-  overflow: hidden;
+  text-align: center;
   gap: 1rem;
 }
 
 .service-image-container {
-  width: 200px; /* Adjust size as needed */
-  height: 100%;
+  width: 120px; /* Smaller image size for mobile */
+  height: 120px;
   position: relative;
   flex-shrink: 0;
 }
@@ -808,15 +811,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
+  text-align: center; /* Center text on mobile */
 }
 
 .service-heading {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  font-size: clamp(16px, 4vw, 18px); /* Responsive font size */
   font-weight: 700;
-  line-height: 24px;
+  line-height: 1.3;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -824,38 +827,38 @@ body {
 .service-description {
   color: #666;
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: clamp(14px, 3.5vw, 16px); /* Responsive font size */
   line-height: 1.5;
   margin: 0;
 }
 
 .service-details-row {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: column; /* Stack extended box and big image vertically on mobile */
+  gap: 1.5rem; /* Reduced gap for mobile */
   width: 100%;
   max-width: 1000px;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   align-items: center;
 }
 
 .extended-box {
-  width: 100%;
-  /* max-width: 800px; */
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for consistency */
   height: auto;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 1.5rem;
+  padding: 1rem; /* Reduced padding for mobile */
   display: flex;
-  flex:1;
-  flex-direction: row;
-  justify-content: center;
-  text-align: left;
+  flex-direction: column; /* Stack image and content vertically on mobile */
+  align-items: center;
+  text-align: center;
   gap: 1rem;
 }
 
 .big-image-container {
-  width: 100%;
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for consistency */
   height: auto;
   border-radius: 12px;
   overflow: hidden;
@@ -867,29 +870,68 @@ body {
   height: auto;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for tablets and larger screens */
 @media (min-width: 768px) {
-  .services-row {
-    flex-direction: row;
+  .services-section {
+    padding: 4rem 2rem; /* Restore original padding for larger screens */
+  }
+
+  .services-container {
+    flex-direction: row; /* Horizontal layout for tablets and desktops */
+    flex-wrap: wrap;
     justify-content: center;
   }
-  
+
+  .sample {
+    gap: 2rem; /* Restore original gap */
+  }
+
+  .services-row {
+    flex-direction: row; /* Horizontal service boxes for tablets and desktops */
+    justify-content: center;
+    gap: 2rem; /* Restore original gap */
+  }
+
   .service-box {
-    width: 475px;
+    width: 475px; /* Fixed width for tablets and desktops */
     height: 222px;
+    flex-direction: row; /* Horizontal layout for image and content */
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem; /* Restore original padding */
+  }
+
+  .service-image-container {
+    width: 200px; /* Restore original image size */
+    height: 200px;
+  }
+
+  .service-content-container {
+    text-align: left; /* Align text left for tablets and desktops */
   }
 
   .service-details-row {
-    flex-direction: row;
+    flex-direction: row; /* Horizontal layout for extended box and big image */
     justify-content: space-between;
-    align-items: flex-start;
+    gap: 2rem; /* Restore original gap */
+    margin-top: 2rem;
   }
 
   .extended-box {
-    width: 60%;
+    width: 60%; /* Proportionate width for tablets and desktops */
+    flex-direction: row; /* Horizontal layout for image and content */
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem; /* Restore original padding */
   }
 
   .big-image-container {
-    width: 40%;
+    width: 40%; /* Proportionate width for tablets and desktops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-container {
+    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
   }
 }
