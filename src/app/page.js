@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -15,7 +17,53 @@ const areas = [
   ['Orangeville', 'Richmond Hill', 'Woodbridge', 'London', 'Windsor', 'Niagara Falls', 'Hamilton', 'Kitchener'],
 ];
 
+// Data for the FAQ section
+const faqData = [
+  {
+    question: "Why should I get my air ducts cleaned?",
+    answer: "Regular air duct cleaning removes dust, allergens, pet dander, and other contaminants from your HVAC system. This improves indoor air quality, helps your system run more efficiently, and can reduce energy costs.",
+  },
+  {
+    question: "How often should I have my air ducts cleaned?",
+    answer: "For most homes, it's recommended to have your air ducts cleaned every 3 to 5 years. However, if you have pets, allergies, or have recently completed a home renovation, you may want to clean them more frequently.",
+  },
+  {
+    question: "How long does a typical duct cleaning take?",
+    answer: "The duration of the cleaning process depends on the size of your home and the complexity of your ductwork. A typical residential cleaning usually takes between 2 to 4 hours.",
+  },
+  {
+    question: "Do you use safe and eco-friendly cleaning methods?",
+    answer: "Yes, we use powerful, truck-mounted vacuum systems and specialized tools to agitate and remove contaminants. Our methods are safe for your family, pets, and the environment, without the use of harsh chemicals.",
+  },
+  {
+    question: "What is included in a standard duct cleaning service?",
+    answer: "Our standard service includes a thorough cleaning of all supply and return vents, the main trunk lines, and the furnace's blower fan and cabinet. We also provide a complete inspection of your ductwork to ensure no issues are present.",
+  },
+];
+
+
+const FaqItem = ({ question, answer, isOpen, onClick }) => {
+  return (
+    <div className="faq-item">
+      <button className="faq-question" onClick={onClick}>
+        <span>{question}</span>
+        <span className={`faq-icon ${isOpen ? 'open' : ''}`}>+</span>
+      </button>
+      <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
+        <p>{answer}</p>
+      </div>
+    </div>
+  );
+};
+
+
 export default function Home() {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  const handleFaqClick = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   return (
     <>
       <Head>
@@ -133,11 +181,19 @@ export default function Home() {
         {/*
           FAQ Section
         */}
-        <section id="faq" className="section container mx-auto" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-700">
-            Have a question? Check out our FAQ section to find quick answers.
-          </p>
+        <section id="faq" className="section faq-section" data-aos="fade-up">
+          <h2 className="faq-title">Frequently Asked Questions</h2>
+          <div className="faq-container">
+            {faqData.map((item, index) => (
+              <FaqItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openFaqIndex === index}
+                onClick={() => handleFaqClick(index)}
+              />
+            ))}
+          </div>
         </section>
 
         {/* Updated Contact Us Section */}
