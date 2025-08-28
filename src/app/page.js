@@ -1,13 +1,12 @@
 'use client';
 import { useState } from 'react';
-import Header from '@/components/Header';
 import Head from 'next/head';
 import Image from 'next/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Import the dedicated CSS file for this page
 import './home.css';
-// import './globals.css';
-import Footer from '@/components/Footer'; // Import the new Footer component
 
 // Data for the areas we serve
 const areas = [
@@ -41,7 +40,7 @@ const faqData = [
   },
 ];
 
-
+// Reusable component for the accordion-style FAQ
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="faq-item">
@@ -55,7 +54,79 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
     </div>
   );
 };
+// New Services Section Component with Updated Layout
+const ServicesSection = () => {
+  return (
+    <section id="services" className="services-section">
+      <h2 className="services-title">Our Services</h2>
+      <p className="services-subtitle">
+        Explore the range of services we offer.
+      </p>
 
+      <div className="services-container">
+        <div className='sample'>
+          <div className="services-row">
+            <div className="service-box">
+              <div className="service-image-container">
+                <Image
+                  src="/dryer-vent-cleaning.svg"
+                alt="Duct Cleaning"
+                width={200}
+                height={200}
+                className="service-image"
+              />
+            </div>
+            <div className="service-content-container">
+              <h5 className="service-heading">Duct Cleaning</h5>
+              <p className="service-description">
+                Thorough cleaning to enhance air quality and system efficiency.
+              </p>
+            </div>
+          </div>
+          <div className="service-box">
+            <div className="service-image-container">
+              <Image
+                src="/commercial-air-duct-cleaning.svg"
+                alt="Commercial Air Duct Cleaning"
+                width={200}
+                height={200}
+                className="service-image"
+              />
+            </div>
+            <div className="service-content-container">
+              <h5 className="service-heading">Furnace Cleaning</h5>
+              <p className="service-description">
+                Comprehensive cleaning for better performance and energy savings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Corrected: Both extended-box and big-image-container are now children of service-details-row */}
+        <div className="service-details-row">
+          <div className="extended-box">
+            <h3>Specialized Cleaning Solutions</h3>
+            <p>
+              We offer advanced services to meet specific needs, ensuring your entire HVAC system is in pristine condition.
+            </p>
+          </div>
+        </div>
+            </div>
+          <div className="big-image-container">
+            <Image
+              src="/seven-years-of-experience.svg"
+              alt="Our team at work"
+              width={1440}
+              height={500}
+              className="big-service-image"
+            />
+          </div>
+      </div>
+    </section>
+  );
+};
+
+// ... (rest of your Home component and CSS remains the same as previously provided)
 
 export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -78,7 +149,6 @@ export default function Home() {
           Home Section
         */}
         <section id="home" className="home-section" data-aos="fade-in">
-
           <div className="hero-person-container" data-aos="fade-right">
             <Image
               src="/home-person.svg"
@@ -90,7 +160,6 @@ export default function Home() {
           </div>
 
           <div className="hero-box" data-aos="zoom-in-up">
-
             <div className="hero-content-container">
               <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
                 Duct Cleaning Services
@@ -98,7 +167,6 @@ export default function Home() {
               <p className="hero-subtitle">
                 Improve your home's air quality with our expert cleaning.
               </p>
-
               <div className="button-group" data-aos="fade-up" data-aos-delay="600">
                 <button className="book-now-button">
                   Book Now
@@ -108,8 +176,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-
-            <div className="hero-logo-container" >
+            <div className="hero-logo-container">
               <div className="logo-box">
                 <Image
                   src="/logo.svg"
@@ -124,31 +191,10 @@ export default function Home() {
         </section>
 
         {/*
-          Services Section
+          Services Section (New)
         */}
-        <section id="services" className="section container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Our Services</h2>
-          <p className="text-lg text-gray-700" data-aos="fade-up" data-aos-delay="100">
-            We provide a comprehensive range of professional services.
-            Our expert team ensures every job is completed with the highest standards.
-          </p>
+        <ServicesSection />
 
-          <div className="sub-section mt-8" data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2">Benefits</h3>
-            <p className="text-gray-600">
-              Discover the benefits of our work. Our solutions are designed
-              to deliver lasting results and improve your daily life.
-            </p>
-          </div>
-
-          <div className="sub-section mt-8" data-aos="fade-up" data-aos-delay="300">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2">Our Results</h3>
-            <p className="text-gray-600">
-              See the incredible transformation our services can provide.
-              We take pride in showing our high-quality work.
-            </p>
-          </div>
-        </section>
 
         {/*
           About Us Section
@@ -179,7 +225,7 @@ export default function Home() {
         </section>
 
         {/*
-          FAQ Section
+          FAQ Section (Accordion Style)
         */}
         <section id="faq" className="section faq-section" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
@@ -208,7 +254,6 @@ export default function Home() {
                 className="contact-image"
               />
             </div>
-
             <div className="contact-middle" data-aos="fade-up" data-aos-delay="200">
               <div className="contact-info">
                 <h2 className="contact-title">Contact Us</h2>
@@ -220,7 +265,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <div className="contact-right" data-aos="fade-up" data-aos-delay="400">
               <div className="contact-form-container">
                 <form className="contact-form">
