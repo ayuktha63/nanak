@@ -11,6 +11,13 @@ body {
   line-height: 1.5;
 }
 
+/* Max-width container for the whole site */
+.main-content {
+  padding-top: 80px; /* Adjust this to prevent content from hiding behind the fixed header */
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* Header Styles */
 .header {
   position: fixed; /* Makes the header sticky at the top */
@@ -89,10 +96,6 @@ body {
 }
 
 /* Section Styles (for demonstration) */
-.main-content {
-  padding-top: 80px; /* Adjust this to prevent content from hiding behind the fixed header */
-}
-
 .section {
   padding: 4rem 2rem;
   min-height: 50vh; /* Makes sections full height for better scrolling demo */
@@ -125,11 +128,6 @@ body {
   }
 }
 
-/* Media query for large screens. */
-@media (min-width: 1440px) {
-  /* No specific adjustments needed here as the header is already handled with space-between */
-}
-
 /* Home Section Styles */
 .home-section {
   display: flex;
@@ -137,7 +135,6 @@ body {
   align-items: center;
   padding: 4rem 2rem;
   position: relative;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -363,7 +360,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem 0rem 4rem ;
+  padding: 4rem 2rem 0rem 4rem;
 }
 
 .contact-content-wrapper {
@@ -590,5 +587,51 @@ body {
     align-items: center;
     text-align: center;
     gap: 1rem;
+  }
+}
+
+/* NEW ABOUT US STYLES */
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.about-us-title {
+  color: #000;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+  margin-bottom: 2rem;
+}
+
+.about-us-box {
+  width: 100%;
+  max-width: 1358px; /* Set max-width as requested */
+  height: auto;
+  padding: 3rem 2rem;
+  border-radius: 300px 300px 23px 300px;
+  background: #AEE441;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 2rem;
+}
+
+.about-us-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Media query for mobile responsiveness of the about-us-box */
+@media (max-width: 768px) {
+  .about-us-box {
+    border-radius: 23px; /* Simpler border radius for mobile */
+    padding: 2rem 1.5rem;
   }
 }

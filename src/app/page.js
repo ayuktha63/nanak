@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 // Import the dedicated CSS file for this page
 import './home.css';
+// import './globals.css';
 import Footer from '@/components/Footer'; // Import the new Footer component
 
 // Data for the areas we serve
@@ -21,7 +22,7 @@ export default function Home() {
         <title>Duct Cleaning Services</title>
         <meta name="description" content="Professional duct cleaning services for a healthier home. Fast, reliable, and affordable." />
       </Head>
-      
+
       <Header />
 
       <main className="main-content">
@@ -29,7 +30,7 @@ export default function Home() {
           Home Section
         */}
         <section id="home" className="home-section" data-aos="fade-in">
-          
+
           <div className="hero-person-container" data-aos="fade-right">
             <Image
               src="/home-person.svg"
@@ -41,15 +42,15 @@ export default function Home() {
           </div>
 
           <div className="hero-box" data-aos="zoom-in-up">
-            
+
             <div className="hero-content-container">
               <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
                 Duct Cleaning Services
               </h1>
               <p className="hero-subtitle">
-                Improve your home&apos;s air quality with our expert cleaning.
+                Improve your home's air quality with our expert cleaning.
               </p>
-              
+
               <div className="button-group" data-aos="fade-up" data-aos-delay="600">
                 <button className="book-now-button">
                   Book Now
@@ -83,7 +84,7 @@ export default function Home() {
             We provide a comprehensive range of professional services.
             Our expert team ensures every job is completed with the highest standards.
           </p>
-          
+
           <div className="sub-section mt-8" data-aos="fade-up" data-aos-delay="200">
             <h3 className="text-2xl md:text-3xl font-semibold mb-2">Benefits</h3>
             <p className="text-gray-600">
@@ -104,12 +105,19 @@ export default function Home() {
         {/*
           About Us Section
         */}
-        <section id="about-us" className="section container mx-auto" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
-          <p className="text-lg text-gray-700">
-            Learn more about who we are and our mission. We are dedicated
-            to providing excellence in everything we do.
-          </p>
+        <section id="about-us" className="section about-us-section" data-aos="fade-up">
+          <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
+          <div className="about-us-box" data-aos="zoom-in">
+            <p className="about-us-text">
+              We’re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of a Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
+              <br /><br />
+              After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable and high-quality duct cleaning services that homeowners and businesses can trust.
+              <br /><br />
+              Today, we proudly serve clients across Brampton, the Greater Toronto Area, and major cities throughout Ontario — helping create cleaner, healthier indoor environments with every job we take on.
+              <br /><br />
+              At the heart of our business is a commitment to hard work, integrity, and treating every customer like family.
+            </p>
+          </div>
         </section>
 
         {/*
@@ -144,7 +152,7 @@ export default function Home() {
                 className="contact-image"
               />
             </div>
-            
+
             <div className="contact-middle" data-aos="fade-up" data-aos-delay="200">
               <div className="contact-info">
                 <h2 className="contact-title">Contact Us</h2>
@@ -196,7 +204,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </>
   );

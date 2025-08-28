@@ -1,6 +1,7 @@
 // Footer.jsx
 import Link from 'next/link';
-import './footer.css';
+import './footer.css';  
+// import '../app/globals.css'
 
 const Footer = () => {
   return (
