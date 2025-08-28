@@ -210,11 +210,11 @@ export default function Home() {
         {/*
           About Us Section
         */}
-        <section id="about-us" className="section about-us-section" data-aos="fade-up">
+<section id="about-us" className="section about-us-section" data-aos="fade-up">
           <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
           <div className="about-us-box" data-aos="zoom-in">
             <p className="about-us-text">
-              We’re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of a Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
+              We&apos;re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of a Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
               <br /><br />
               After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable and high-quality duct cleaning services that homeowners and businesses can trust.
               <br /><br />
