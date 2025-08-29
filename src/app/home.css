@@ -15,7 +15,7 @@
 .hero-box {
   position: relative;
   width: 100%;
-  max-width: 1380px; /* Restored for desktop */
+  max-width: 1380px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 1rem; /* Reduced for mobile */
+  right: 1rem;
   z-index: 3;
 }
 
@@ -125,8 +125,8 @@
   background-color: #fff;
   border-radius: 23px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem; /* Reduced for mobile */
-  width: 200px; /* Reduced for mobile */
+  padding: 1rem;
+  width: 200px;
   height: 200px;
   display: flex;
   align-items: center;
@@ -139,7 +139,7 @@
   padding: 4rem 1rem;
   text-align: center;
   width: 100%;
-  max-width: 1440px; /* Restored for desktop */
+  max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -216,7 +216,7 @@
   object-fit: contain;
   width: 100%;
   height: 100%;
-  max-width: 100%; /* Prevent image overflow */
+  max-width: 100%;
 }
 
 .service-content-container {
@@ -281,31 +281,33 @@
   object-fit: cover;
   width: 100%;
   height: auto;
-  max-width: 100%; /* Prevent image overflow */
+  max-width: 100%;
 }
 
-/* Testimonials Section Styles (Replaced Tailwind) */
+/* Testimonials Section Styles */
 .testimonials-section {
-  padding: 4rem 1rem; /* Equivalent to container padding */
+  padding: 4rem 1rem;
   margin: 0 auto;
   width: 100%;
-  max-width: 1440px; /* Equivalent to container max-width */
+  max-width: 1440px;
   box-sizing: border-box;
 }
 
 .testimonials-title {
-  font-size: 1.875rem; /* Equivalent to text-3xl */
-  font-weight: 700; /* Equivalent to font-bold */
-  margin-bottom: 1rem; /* Equivalent to mb-4 */
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: #000;
   font-family: 'Raleway', sans-serif;
+  text-align: center; /* Ensure centered text */
 }
 
 .testimonials-text {
-  font-size: 1.125rem; /* Equivalent to text-lg */
-  color: #4B5563; /* Equivalent to text-gray-700 */
+  font-size: 1.125rem;
+  color: #4B5563;
   font-family: 'Raleway', sans-serif;
   line-height: 1.6;
+  text-align: center; /* Ensure centered text */
 }
 
 /* About Us Section Styles */
@@ -330,7 +332,7 @@
 
 .about-us-box {
   width: 100%;
-  max-width: 1358px; /* Restored for desktop */
+  max-width: 1358px;
   height: auto;
   padding: 3rem 2rem;
   border-radius: 300px 300px 23px 300px;
@@ -351,7 +353,7 @@
 /* FAQ Section Styles */
 .faq-section {
   width: 100%;
-  max-width: 1440px; /* Restored for desktop */
+  max-width: 1440px;
   margin: 0 auto;
   padding: 4rem 2rem;
   box-sizing: border-box;
@@ -453,7 +455,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Restored for desktop */
+  max-width: 1200px;
   gap: 2rem;
 }
 
@@ -475,7 +477,7 @@
   width: 75%;
   height: auto;
   object-fit: contain;
-  max-width: 100%; /* Prevent image overflow */
+  max-width: 100%;
 }
 
 .contact-title {
@@ -568,7 +570,7 @@
 .map-section {
   padding: 2rem 0;
   width: 100%;
-  max-width: 1440px; /* Restored for desktop */
+  max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -581,8 +583,8 @@
 }
 
 .map-container iframe {
-  width: 100%; /* Responsive iframe width */
-  max-width: 1100px; /* Cap for desktop */
+  width: 100%;
+  max-width: 1100px;
   height: 300px;
   border: 0;
 }
@@ -590,13 +592,13 @@
 /* Areas We Serve Section Styles */
 .areas-title {
   color: rgba(0, 0, 0, 0.76);
-  text-align: center;
+  text-align: center; /* Explicitly center for all screens */
   font-size: 2.5rem;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
-  max-width: 1440px; /* Restored for desktop */
+  max-width: 1440px;
   padding: 0 2rem;
   box-sizing: border-box;
 }
@@ -606,9 +608,9 @@
   background-color: #AEE441;
   border-radius: 23px 300px 300px 23px;
   width: 100%;
-  max-width: 1358px; /* Restored for desktop */
+  max-width: 1358px;
   height: 428px;
-  margin: 2rem auto 10rem auto;
+  margin: 2rem auto 10rem 0;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -687,12 +689,12 @@
   }
 
   .hero-logo-container {
-    right: 3rem; /* Restore original positioning */
+    right: 3rem;
   }
 
   .logo-box {
-    padding: 2rem; /* Restore original padding */
-    width: 380px; /* Restore original width */
+    padding: 2rem;
+    width: 380px;
     height: 380px;
   }
 
@@ -717,7 +719,11 @@
   }
 
   .testimonials-title {
-    font-size: 2.25rem; /* Equivalent to md:text-4xl */
+    font-size: 2.25rem;
+  }
+
+  .areas-title {
+    text-align: center; /* Explicitly center for larger screens */
   }
 }
 
@@ -788,8 +794,13 @@
     max-width: 100%;
   }
 
+  .big-service-image {
+    display: none; /* Hide big-service-image on mobile */
+  }
+
   .about-us-section {
     padding: 3rem 1rem;
+    max-width: 100%;
   }
 
   .about-us-box {
@@ -834,6 +845,7 @@
   .areas-title {
     max-width: 100%;
     padding: 0 1rem;
+    text-align: center; /* Ensure centered on mobile */
   }
 
   .testimonials-section {
@@ -849,7 +861,6 @@
 
   .services-container {
     flex-direction: row;
-    /* flex-wrap: wrap; */
     justify-content: center;
   }
 
@@ -914,12 +925,12 @@
   .hero-content-container {
     padding-left: 2rem;
     padding-right: 5rem;
-    width: 1000px; /* Restored for desktop */
+    width: 1000px;
   }
 
   .hero-person-container {
     top: 112px;
-    left: -100px; /* Restored for desktop */
+    left: -100px;
     height: 600px;
     width: auto;
   }
@@ -947,6 +958,10 @@
   .areas-we-serve {
     padding: 0 2rem;
     max-width: 1358px;
+  }
+
+  .areas-title {
+    text-align: center; /* Ensure centered on large screens */
   }
 }
 
@@ -1076,5 +1091,9 @@
   .areas-we-serve {
     height: auto;
     padding: 2rem;
+  }
+
+  .areas-title {
+    text-align: center; /* Ensure centered in tablet landscape */
   }
 }
