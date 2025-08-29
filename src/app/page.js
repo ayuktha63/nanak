@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Import the dedicated CSS file for this page
+// Import the dedicated CSS files for this page
 import './home.css';
+import './testimonials.css';
 
 // Data for the areas we serve
 const areas = [
@@ -40,6 +41,25 @@ const faqData = [
   },
 ];
 
+// Data for the testimonials section
+const testimonialsData = [
+  {
+    name: "John Doe",
+    profilePic: "/profile-pic-1.svg",
+    review: "They did an amazing job cleaning our ducts and the price was not bad either. I can smell the difference. Thanks guys!",
+  },
+  {
+    name: "Jane Smith",
+    profilePic: "/profile-pic-2.svg",
+    review: "Professional and thorough. Highly recommend their services!",
+  },
+  {
+    name: "Mike Johnson",
+    profilePic: "/profile-pic-3.svg",
+    review: "Great service, friendly team, and noticeable improvement in air quality.",
+  },
+];
+
 // Reusable component for the accordion-style FAQ
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -51,6 +71,37 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
       <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
         <p>{answer}</p>
       </div>
+    </div>
+  );
+};
+
+// Reusable component for testimonial card
+const TestimonialCard = ({ name, profilePic, review }) => {
+  return (
+    <div className="testimonial-card">
+      <div className="testimonial-header">
+        <Image
+          src={profilePic}
+          alt={`${name}'s profile picture`}
+          width={48}
+          height={48}
+          className="profile-pic"
+        />
+        <h5 className="testimonial-name">{name}</h5>
+        <div className="testimonial-rating">
+          {[...Array(5)].map((_, index) => (
+            <Image
+              key={index}
+              src="/star-icon.svg"
+              alt="Star"
+              width={20}
+              height={20}
+              className="star-icon"
+            />
+          ))}
+        </div>
+      </div>
+      <p className="testimonial-text">{review}</p>
     </div>
   );
 };
@@ -213,10 +264,24 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
-          <h2 className="testimonials-title">What Our Customers Say</h2>
-          <p className="testimonials-text">
-            Read reviews from satisfied clients who have experienced our service firsthand.
-          </p>
+          <div className="testimonials-box" data-aos="zoom-in">
+            <h2 className="testimonials-title" data-aos="fade-up" data-aos-delay="200">
+              What Our Customers Say
+            </h2>
+            <p className="testimonials-subtitle" data-aos="fade-up" data-aos-delay="400">
+              Hear from happy homeowners we&apos;ve helped.
+            </p>
+            <div className="testimonials-container" data-aos="fade-up" data-aos-delay="600">
+              {testimonialsData.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  name={testimonial.name}
+                  profilePic={testimonial.profilePic}
+                  review={testimonial.review}
+                />
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* FAQ Section (Accordion Style) */}
@@ -272,7 +337,7 @@ export default function Home() {
           </div>
         </section>
 
-        /* Map Section */
+        {/* Map Section */}
         <section className="map-section" data-aos="fade-up">
           <div className="map-container">
             <iframe
@@ -287,7 +352,7 @@ export default function Home() {
           </div>
         </section>
 
-        /* Areas We Serve Section */
+        {/* Areas We Serve Section */}
         <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
         <section id="areas-we-serve" className="areas-we-serve" data-aos="fade-up">
           <div className="areas-list">
