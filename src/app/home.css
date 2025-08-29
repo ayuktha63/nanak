@@ -1,133 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* General body and heading styles */
-html {
-  scroll-behavior: smooth; /* Smooth scrolling to sections */
-}
-
-body {
-  margin: 0;
-  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-}
-
-/* Max-width container for the whole site */
-.main-content {
-  padding-top: 80px; /* Adjust this to prevent content from hiding behind the fixed header */
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-/* Header Styles */
-.header {
-  position: fixed; /* Makes the header sticky at the top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between; /* Changed to space-between to push content to the edges */
-  align-items: center;
-  z-index: 1000; /* Ensures the header stays on top of other content */
-}
-
-/* The header-content-wrapper is no longer needed with space-between */
-/* Removed .header-content-wrapper styles */
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-container a {
-  display: flex;
-}
-
-/* Responsive Logo Styles */
-.logo {
-  width: 80%; /* Adjust the logo width as a percentage */
-  max-width: 255px; /* Cap the max width for larger screens */
-  height: auto;
-}
-
-/* Navigation Styles for Desktop */
-.nav-links-desktop {
-  display: none; /* Hide by default */
-  gap: 1.5rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #0070f3; /* Example hover color */
-}
-
-/* Hamburger Menu Styles for Mobile and Tablet */
-.hamburger-menu {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  display: block; /* Hamburger is now always displayed on smaller screens */
-}
-
-/* Navigation Styles for Mobile */
-.nav-links-mobile {
-  position: absolute;
-  top: 100%; /* Position below the header */
-  left: 0;
-  width: 100%;
-  background-color: #f8f8f8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.nav-link-mobile:last-child {
-  border-bottom: none;
-}
-
-/* Section Styles (for demonstration) */
-.section {
-  padding: 4rem 2rem;
-  min-height: 50vh; /* Makes sections full height for better scrolling demo */
-}
-
-.title {
-  margin-top: 0;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 767px) {
-  .header {
-    padding: 1rem 1rem; /* Adjust padding for mobile */
-    justify-content: space-between;
-  }
-}
-
-/* Media Query for Desktop */
-@media (min-width: 1024px) {
-  .nav-links-desktop {
-    display: flex; /* Show desktop nav */
-  }
-
-  .hamburger-menu {
-    display: none; /* Hide hamburger on desktop */
-  }
-
-  .nav-links-mobile {
-    display: none; /* Hide mobile menu */
-  }
-}
-
 /* Home Section Styles */
 .home-section {
   display: flex;
@@ -352,6 +224,358 @@ body {
     left: -100px;
     height: 600px;
     width: auto;
+  }
+}
+
+/* Services Section Styles */
+.services-section {
+  padding: 4rem 1rem; /* Reduced padding on mobile */
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.services-title {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(28px, 7vw, 40px); /* Responsive font size */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.services-subtitle {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(16px, 4vw, 20px); /* Responsive font size */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically on all screens by default */
+  align-items: center;
+  gap: 1.5rem; /* Reduced gap for mobile */
+}
+
+.sample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Reduced gap for mobile */
+  width: 100%;
+}
+
+.services-row {
+  display: flex;
+  flex-direction: column; /* Stack service boxes vertically on mobile */
+  align-items: center;
+  gap: 1.5rem; /* Reduced gap for mobile */
+  width: 100%;
+  max-width: 1000px;
+}
+
+.service-box {
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for larger screens */
+  height: auto; /* Allow height to adjust based on content */
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 1rem; /* Reduced padding for mobile */
+  display: flex;
+  flex-direction: column; /* Stack image and content vertically on mobile */
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.service-image-container {
+  width: 120px; /* Smaller image size for mobile */
+  height: 120px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.service-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.service-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Center text on mobile */
+}
+
+.service-heading {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(16px, 4vw, 18px); /* Responsive font size */
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: #666;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(14px, 3.5vw, 16px); /* Responsive font size */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* service-details-row and extended-box for mobile devices */
+.service-details-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.extended-box {
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for consistency on smaller tablets */
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.big-image-container {
+  width: 100%; /* Full width on mobile */
+  max-width: 475px; /* Cap width for consistency */
+  height: auto;
+  flex: 1 1 40%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.big-service-image {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments for tablets and larger screens */
+@media (min-width: 768px) {
+  .services-section {
+    padding: 4rem 2rem; /* Restore original padding for larger screens */
+  }
+
+  .services-container {
+    flex-direction: row; /* Horizontal layout for tablets and desktops */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sample {
+    gap: 2rem; /* Restore original gap */
+  }
+
+  .services-row {
+    flex-direction: row; /* Horizontal service boxes for tablets and desktops */
+    justify-content: center;
+    gap: 2rem; /* Restore original gap */
+  }
+
+  .service-box {
+    width: 475px; /* Fixed width for tablets and desktops */
+    height: 222px;
+    flex-direction: row; /* Horizontal layout for image and content */
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem; /* Restore original padding */
+  }
+
+  .service-image-container {
+    width: 200px; /* Restore original image size */
+    height: 200px;
+  }
+
+  .service-content-container {
+    text-align: left; /* Align text left for tablets and desktops */
+  }
+
+  .service-details-row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: stretch; /* New rule to make children fill the row's height */
+  }
+
+  .extended-box {
+    width: auto; /* Allow the box to flex and grow */
+    max-width: none; /* Remove max-width constraint on desktop */
+    flex: 1 1 60%; /* This makes the box flex and take up 60% of the row */
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem;
+  }
+
+  .big-image-container {
+    width: 40%; /* Proportionate width for tablets and desktops */
+    flex: 1 1 40%; /* Update to flex grow/shrink and basis */
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-container {
+    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+  }
+}
+
+/* About Us Section Styles */
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.about-us-title {
+  color: #000;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 2rem;
+}
+
+.about-us-box {
+  width: 100%;
+  max-width: 1358px;
+  height: auto;
+  padding: 3rem 2rem;
+  border-radius: 300px 300px 23px 300px;
+  background: #AEE441;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 2rem;
+}
+
+.about-us-text {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Media query for mobile responsiveness of the about-us-box */
+@media (max-width: 768px) {
+  .about-us-box {
+    border-radius: 23px;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* FAQ Section Styles */
+.faq-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.faq-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #AEE441;
+}
+
+.faq-icon {
+  font-size: 2rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.faq-answer p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -587,359 +811,5 @@ body {
     align-items: center;
     text-align: center;
     gap: 1rem;
-  }
-}
-
-/* NEW ABOUT US STYLES */
-.about-us-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 2rem;
-}
-
-.about-us-title {
-  color: #000;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 48px;
-  margin-bottom: 2rem;
-}
-
-.about-us-box {
-  width: 100%;
-  max-width: 1358px;
-  height: auto;
-  padding: 3rem 2rem;
-  border-radius: 300px 300px 23px 300px;
-  background: #AEE441;
-  color: #fff;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  text-align: justify;
-  margin-top: 2rem;
-}
-
-.about-us-text {
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-/* Media query for mobile responsiveness of the about-us-box */
-@media (max-width: 768px) {
-  .about-us-box {
-    border-radius: 23px;
-    padding: 2rem 1.5rem;
-  }
-}
-
-/* NEW FAQ SECTION STYLES */
-.faq-section {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-.faq-title {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 48px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.faq-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 1.5rem 0;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.faq-question:hover {
-  color: #AEE441;
-}
-
-.faq-icon {
-  font-size: 2rem;
-  font-weight: 400;
-  transition: transform 0.3s ease;
-}
-
-.faq-icon.open {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-}
-
-.faq-answer.open {
-  max-height: 200px;
-  animation: fadeIn 0.5s ease-in;
-}
-
-.faq-answer p {
-  margin-top: 1rem;
-  margin-bottom: 0;
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Services Section Styles */
-.services-section {
-  padding: 4rem 1rem; /* Reduced padding on mobile */
-  text-align: center;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.services-title {
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(28px, 7vw, 40px); /* Responsive font size */
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.services-subtitle {
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(16px, 4vw, 20px); /* Responsive font size */
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.4;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-.services-container {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically on all screens by default */
-  align-items: center;
-  gap: 1.5rem; /* Reduced gap for mobile */
-}
-
-.sample {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem; /* Reduced gap for mobile */
-  width: 100%;
-}
-
-.services-row {
-  display: flex;
-  flex-direction: column; /* Stack service boxes vertically on mobile */
-  align-items: center;
-  gap: 1.5rem; /* Reduced gap for mobile */
-  width: 100%;
-  max-width: 1000px;
-}
-
-.service-box {
-  width: 100%; /* Full width on mobile */
-  max-width: 475px; /* Cap width for larger screens */
-  height: auto; /* Allow height to adjust based on content */
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 1rem; /* Reduced padding for mobile */
-  display: flex;
-  flex-direction: column; /* Stack image and content vertically on mobile */
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-}
-
-.service-image-container {
-  width: 120px; /* Smaller image size for mobile */
-  height: 120px;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.service-image {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-}
-
-.service-content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center; /* Center text on mobile */
-}
-
-.service-heading {
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(16px, 4vw, 18px); /* Responsive font size */
-  font-weight: 700;
-  line-height: 1.3;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.service-description {
-  color: #666;
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(14px, 3.5vw, 16px); /* Responsive font size */
-  line-height: 1.5;
-  margin: 0;
-}
-
-
-
-/* service-details-row and extended-box for mobile devices */
-.service-details-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 1.5rem;
-  align-items: center;
-}
-
-.extended-box {
-  width: 100%; /* Full width on mobile */
-  max-width: 475px; /* Cap width for consistency on smaller tablets */
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-}
-
-.big-image-container {
-  width: 100%; /* Full width on mobile */
-  max-width: 475px; /* Cap width for consistency */
-  height: auto;
-  flex: 1 1 40%;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.big-service-image {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
-
-/* Responsive adjustments for tablets and larger screens */
-@media (min-width: 768px) {
-  .services-section {
-    padding: 4rem 2rem; /* Restore original padding for larger screens */
-  }
-
-  .services-container {
-    flex-direction: row; /* Horizontal layout for tablets and desktops */
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .sample {
-    gap: 2rem; /* Restore original gap */
-  }
-
-  .services-row {
-    flex-direction: row; /* Horizontal service boxes for tablets and desktops */
-    justify-content: center;
-    gap: 2rem; /* Restore original gap */
-  }
-
-  .service-box {
-    width: 475px; /* Fixed width for tablets and desktops */
-    height: 222px;
-    flex-direction: row; /* Horizontal layout for image and content */
-    align-items: center;
-    text-align: left;
-    padding: 1.5rem; /* Restore original padding */
-  }
-
-  .service-image-container {
-    width: 200px; /* Restore original image size */
-    height: 200px;
-  }
-
-  .service-content-container {
-    text-align: left; /* Align text left for tablets and desktops */
-  }
-
-  .service-details-row {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 2rem;
-    align-items: stretch; /* New rule to make children fill the row's height */
-  }
-
-  .extended-box {
-    width: auto; /* Allow the box to flex and grow */
-    max-width: none; /* Remove max-width constraint on desktop */
-    flex: 1 1 60%; /* This makes the box flex and take up 60% of the row */
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding: 1.5rem;
-  }
-
-  .big-image-container {
-    width: 40%; /* Proportionate width for tablets and desktops */
-    flex: 1 1 40%; /* Update to flex grow/shrink and basis */
-  }
-}
-
-@media (min-width: 1024px) {
-  .services-container {
-    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
   }
 }

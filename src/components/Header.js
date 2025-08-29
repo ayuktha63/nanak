@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-
+import './header.css';
 const Header = () => {
   // State to manage the mobile menu's open/closed status
   const [isMenuOpen, setIsMenuOpen] = useState(false);
