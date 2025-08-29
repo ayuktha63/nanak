@@ -60,6 +60,38 @@ const testimonialsData = [
   },
 ];
 
+// Data for the benefits section
+const benefitsData = [
+  {
+    title: "Improved Air Quality",
+    description: "Remove dust, allergens, and contaminants for a healthier home environment.",
+  },
+  {
+    title: "Energy Efficiency",
+    description: "Clean ducts improve HVAC performance, reducing energy costs.",
+  },
+  {
+    title: "Extended System Lifespan",
+    description: "Regular cleaning prevents wear and tear, prolonging your HVAC system’s life.",
+  },
+];
+
+// Data for the how it works section
+const howItWorksData = [
+  {
+    step: "Step 1: Inspection",
+    description: "We assess your HVAC system to identify areas needing attention.",
+  },
+  {
+    step: "Step 2: Cleaning",
+    description: "Using advanced tools, we remove dust and debris from ducts and vents.",
+  },
+  {
+    step: "Step 3: Final Check",
+    description: "We ensure your system is clean and functioning optimally.",
+  },
+];
+
 // Reusable component for the accordion-style FAQ
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -106,7 +138,27 @@ const TestimonialCard = ({ name, profilePic, review }) => {
   );
 };
 
-// Services Section Component with Updated Layout
+// Reusable component for benefits card
+const BenefitCard = ({ title, description }) => {
+  return (
+    <div className="benefit-card">
+      <h5 className="benefit-heading">{title}</h5>
+      <p className="benefit-description">{description}</p>
+    </div>
+  );
+};
+
+// Reusable component for how it works step
+const HowItWorksStep = ({ step, description }) => {
+  return (
+    <div className="how-it-works-step">
+      <h5 className="how-it-works-heading">{step}</h5>
+      <p className="how-it-works-description">{description}</p>
+    </div>
+  );
+};
+
+// Services Section Component
 const ServicesSection = () => {
   return (
     <section id="services" className="services-section">
@@ -246,19 +298,37 @@ export default function Home() {
         {/* Services Section */}
         <ServicesSection />
 
-        {/* About Us Section */}
-        <section id="about-us" className="section about-us-section" data-aos="fade-up">
-          <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
-          <div className="about-us-box" data-aos="zoom-in">
-            <p className="about-us-text">
-              We&apos;re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
-              <br /><br />
-              After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable, and high-quality duct cleaning services that homeowners and businesses can trust.
-              <br /><br />
-              Today, we proudly serve clients across Brampton, the Greater Toronto Area, and major cities throughout Ontario — helping create cleaner, healthier indoor environments with every job we take on.
-              <br /><br />
-              At the heart of our business is a commitment to hard work, integrity, and treating every customer like family.
-            </p>
+        {/* Benefits Section */}
+        <section id="benefits" className="section benefits-section" data-aos="fade-up">
+          <h2 className="benefits-title" data-aos="fade-up">Benefits of Duct Cleaning</h2>
+          <p className="benefits-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Discover why cleaning your ducts is essential for your home.
+          </p>
+          <div className="benefits-container" data-aos="fade-up" data-aos-delay="400">
+            {benefitsData.map((benefit, index) => (
+              <BenefitCard
+                key={index}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="section how-it-works-section" data-aos="fade-up">
+          <h2 className="how-it-works-title" data-aos="fade-up">How It Works</h2>
+          <p className="how-it-works-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Our simple process ensures a thorough and efficient cleaning.
+          </p>
+          <div className="how-it-works-container" data-aos="fade-up" data-aos-delay="400">
+            {howItWorksData.map((step, index) => (
+              <HowItWorksStep
+                key={index}
+                step={step.step}
+                description={step.description}
+              />
+            ))}
           </div>
         </section>
 
@@ -284,6 +354,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Us Section */}
+        <section id="about-us" className="section about-us-section" data-aos="fade-up">
+          <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
+          <div className="about-us-box" data-aos="zoom-in">
+            <p className="about-us-text">
+              We&apos;re <strong>Sanyam</strong> and <strong>Himanshu</strong> — brothers, business partners, and proud founders of Nanak Duct Cleaning based in Brampton, Ontario. Our journey began in 2019 when we came to Canada as international students, eager to learn, grow, and build a better future.
+              <br /><br />
+              After working various jobs and gaining valuable hands-on experience in the duct cleaning industry, we discovered a passion for the work and a clear opportunity to do things better. With over 7 years of combined industry experience, we launched our own business with a simple mission: to provide honest, affordable, and high-quality duct cleaning services that homeowners and businesses can trust.
+              <br /><br />
+              Today, we proudly serve clients across Brampton, the Greater Toronto Area, and major cities throughout Ontario — helping create cleaner, healthier indoor environments with every job we take on.
+              <br /><br />
+              At the heart of our business is a commitment to hard work, integrity, and treating every customer like family.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ Section (Accordion Style) */}
         <section id="faq" className="section faq-section" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
@@ -300,7 +386,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Updated Contact Us Section */}
+        {/* Contact Us Section */}
         <section id="contact-us" className="section contact-us-section" data-aos="fade-up">
           <div className="contact-content-wrapper">
             <div className="contact-left" data-aos="fade-right">
@@ -337,25 +423,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="map-section" data-aos="fade-up">
-          <div className="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5731747723944!2d-79.72572072433802!3d43.740192946800825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84d1c08d7e37c381%3A0xba0e7a9314944ed9!2sNanak%20duct%20cleaning!5e0!3m2!1sen!2sin!4v1756155577044!5m2!1sen!2sin"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </section>
-
         {/* Areas We Serve Section */}
-        <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
-        <section id="areas-we-serve" className="areas-we-serve" data-aos="fade-up">
-          <div className="areas-list">
+        <section id="areas-we-serve" className="section areas-we-serve" data-aos="fade-up">
+          <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
+          <div className="areas-list" data-aos="fade-up" data-aos-delay="200">
             {areas.map((column, index) => (
               <div key={index} className="areas-column" data-aos="fade-up" data-aos-delay={index * 100}>
                 {column.map((city) => (

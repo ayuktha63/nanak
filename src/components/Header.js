@@ -20,8 +20,8 @@ return (
     <nav className="nav-links-desktop">
       <a href="#home" className="nav-link">Home</a>
       <a href="#services" className="nav-link">Services</a>
-      <a href="#about-us" className="nav-link">About Us</a>
       <a href="#testimonials" className="nav-link">Testimonials</a>
+      <a href="#about-us" className="nav-link">About Us</a>
       <a href="#faq" className="nav-link">FAQ</a>
       <a href="#contact-us" className="nav-link">Contact Us</a>
     </nav>
