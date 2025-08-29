@@ -80,7 +80,7 @@ min-height: 613px;
 .testimonial-name {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
-  margin-right: 60px;
+  width:150px;
   font-weight: 600;
   color: #000;
 }

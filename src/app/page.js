@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 // Import the dedicated CSS files for this page
 import './home.css';
 import './testimonials.css';
+import './how-it-works.css';
 
 // Data for the areas we serve
 const areas = [
@@ -81,14 +82,17 @@ const howItWorksData = [
   {
     step: "Step 1: Inspection",
     description: "We assess your HVAC system to identify areas needing attention.",
+    image: "/inspection.svg",
   },
   {
     step: "Step 2: Cleaning",
     description: "Using advanced tools, we remove dust and debris from ducts and vents.",
+    image: "/cleaning.svg",
   },
   {
     step: "Step 3: Final Check",
     description: "We ensure your system is clean and functioning optimally.",
+    image: "/final-check.svg",
   },
 ];
 
@@ -149,11 +153,22 @@ const BenefitCard = ({ title, description }) => {
 };
 
 // Reusable component for how it works step
-const HowItWorksStep = ({ step, description }) => {
+const HowItWorksStep = ({ step, description, image }) => {
   return (
     <div className="how-it-works-step">
-      <h5 className="how-it-works-heading">{step}</h5>
-      <p className="how-it-works-description">{description}</p>
+      <div className="how-it-works-image-container">
+        <Image
+          src={image}
+          alt={step}
+          width={200}
+          height={200}
+          className="how-it-works-image"
+        />
+      </div>
+      <div className="how-it-works-content-container">
+        <h5 className="how-it-works-heading">{step}</h5>
+        <p className="how-it-works-description">{description}</p>
+      </div>
     </div>
   );
 };
@@ -327,6 +342,7 @@ export default function Home() {
                 key={index}
                 step={step.step}
                 description={step.description}
+                image={step.image}
               />
             ))}
           </div>
