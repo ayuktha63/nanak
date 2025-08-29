@@ -156,7 +156,6 @@ export default function Home() {
       <main className="main-content">
         {/* Home Section */}
         <section id="home" className="home-section" data-aos="fade-in">
-
           <div className="hero-person-container" data-aos="fade-right">
             <Image
               src="/home-person.svg"
@@ -273,7 +272,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Map Section */}
+        /* Map Section */
         <section className="map-section" data-aos="fade-up">
           <div className="map-container">
             <iframe
@@ -288,7 +287,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Areas We Serve Section */}
+        /* Areas We Serve Section */
         <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
         <section id="areas-we-serve" className="areas-we-serve" data-aos="fade-up">
           <div className="areas-list">
