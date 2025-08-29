@@ -1,3 +1,4 @@
+/* page.js */
 'use client';
 
 import { useState } from 'react';
@@ -223,7 +224,7 @@ const ServicesSection = () => {
               <div className="service-image-container">
                 <Image
                   src="/commercial-air-duct-cleaning.svg"
-                  alt="Commercial Air Duct Cleaning"
+                  alt="Commercial Air duct Cleaning"
                   width={200}
                   height={200}
                   className="service-image"
