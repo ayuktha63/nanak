@@ -832,10 +832,13 @@ body {
   margin: 0;
 }
 
+
+
+/* service-details-row and extended-box for mobile devices */
 .service-details-row {
   display: flex;
-  flex-direction: column; /* Stack extended box and big image vertically on mobile */
-  gap: 1.5rem; /* Reduced gap for mobile */
+  flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1000px;
   margin-top: 1.5rem;
@@ -844,13 +847,13 @@ body {
 
 .extended-box {
   width: 100%; /* Full width on mobile */
-  max-width: 475px; /* Cap width for consistency */
+  max-width: 475px; /* Cap width for consistency on smaller tablets */
   height: auto;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.10);
-  padding: 1rem; /* Reduced padding for mobile */
+  padding: 1rem;
   display: flex;
-  flex-direction: column; /* Stack image and content vertically on mobile */
+  flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1rem;
@@ -860,6 +863,7 @@ body {
   width: 100%; /* Full width on mobile */
   max-width: 475px; /* Cap width for consistency */
   height: auto;
+  flex: 1 1 40%;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -911,22 +915,26 @@ body {
   }
 
   .service-details-row {
-    flex-direction: row; /* Horizontal layout for extended box and big image */
+    flex-direction: row;
     justify-content: space-between;
-    gap: 2rem; /* Restore original gap */
+    gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch; /* New rule to make children fill the row's height */
   }
 
   .extended-box {
-    width: 60%; /* Proportionate width for tablets and desktops */
-    flex-direction: row; /* Horizontal layout for image and content */
+    width: auto; /* Allow the box to flex and grow */
+    max-width: none; /* Remove max-width constraint on desktop */
+    flex: 1 1 60%; /* This makes the box flex and take up 60% of the row */
+    flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 1.5rem; /* Restore original padding */
+    padding: 1.5rem;
   }
 
   .big-image-container {
     width: 40%; /* Proportionate width for tablets and desktops */
+    flex: 1 1 40%; /* Update to flex grow/shrink and basis */
   }
 }
 

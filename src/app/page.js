@@ -121,6 +121,8 @@ const ServicesSection = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
             <div className="big-image-container">
               <Image
                 src="/seven-years-of-experience.svg"
@@ -130,8 +132,6 @@ const ServicesSection = () => {
                 className="big-service-image"
               />
             </div>
-          </div>
-        </div>
       </div>
     </section>
   );
