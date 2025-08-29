@@ -58,6 +58,38 @@
   color: #333; /* Set icon color */
   margin: 0 1rem; /* Balanced margins for mobile */
   z-index: 1001; /* Ensure button is above other elements */
+  position: relative; /* Necessary for positioning the icon container */
+  width: 30px;
+  height: 30px;
+}
+
+/* Icon Container for overlapping SVGs */
+.icon-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Base styles for both SVGs */
+.hamburger-lines,
+.close-x {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Animation states for fading in and out */
+.fade-in {
+  opacity: 1;
+  transform: scale(1); /* Ensure it's at normal size */
+  pointer-events: auto; /* Allow interaction */
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0.8); /* Slightly shrink when fading out */
+  pointer-events: none; /* Prevent interaction when invisible */
 }
 
 /* Navigation Links (Mobile) */
@@ -73,8 +105,8 @@
   align-items: center;
   padding: 0;
   max-height: 0; /* Hides the menu initially */
-  overflow-y: auto; /* Allow scrolling if content exceeds max-height */
-  transition: max-height 0.3s ease-in-out; /* Simplified transition */
+  overflow: hidden; /* Hide overflow for smooth transition */
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Smoother transition */
   box-sizing: border-box; /* Prevent padding issues */
   z-index: 999; /* Ensure menu is below hamburger but above other content */
 }
@@ -83,12 +115,6 @@
 .nav-links-mobile.open {
   max-height: 800px; /* Sufficient for all menu items */
   padding: 1rem 0;
-  display: flex; /* Explicitly ensure visibility */
-}
-
-/* Ensure no override hides the menu */
-.nav-links-mobile.open * {
-  visibility: visible; /* Ensure all children are visible */
 }
 
 .nav-link-mobile {
@@ -120,10 +146,6 @@
   .hamburger-menu {
     margin: 0 0.75rem; /* Adjusted margins for small screens */
   }
-
-  .nav-links-mobile.open {
-    max-height: 800px; /* Ensure visibility on small screens */
-  }
 }
 
 /* Tablet view in landscape (768px to 1023px) */
@@ -142,10 +164,6 @@
 
   .nav-links-desktop {
     display: none; /* Ensure desktop nav is hidden */
-  }
-
-  .nav-links-mobile.open {
-    max-height: 800px; /* Ensure visibility in landscape */
   }
 }
 
