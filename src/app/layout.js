@@ -3,8 +3,11 @@ import './globals.css';
 import AOSProvider from '@/components/AOSProvider'; // Import the new AOS Provider
 
 export const metadata = {
-  title: 'Your Website Title',
-  description: 'Your Website Description',
+  title: 'Nanak Duct Cleaning',
+  description: 'Professional duct cleaning services in Canada.',
+  icons: {
+    icon: '/title-logo.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
