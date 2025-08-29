@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -65,15 +66,23 @@ const testimonialsData = [
 const benefitsData = [
   {
     title: "Improved Air Quality",
-    description: "Remove dust, allergens, and contaminants for a healthier home environment.",
+    description: "Breathe healthier air in your home.",
+    image: "/improved-air-quality.png",
   },
   {
-    title: "Energy Efficiency",
+    title: "Lower Energy Bills",
     description: "Clean ducts improve HVAC performance, reducing energy costs.",
+    image: "/lower-energy-bills.svg",
+  },
+  {
+    title: "Reduced Allergens and Dust",
+    description: "Remove allergens and dust for a cleaner living space.",
+    image: "/reduced-allergens.svg",
   },
   {
     title: "Extended System Lifespan",
     description: "Regular cleaning prevents wear and tear, prolonging your HVAC system’s life.",
+    image: "/extended-lifespan.svg",
   },
 ];
 
@@ -143,9 +152,18 @@ const TestimonialCard = ({ name, profilePic, review }) => {
 };
 
 // Reusable component for benefits card
-const BenefitCard = ({ title, description }) => {
+const BenefitCard = ({ title, description, image }) => {
   return (
     <div className="benefit-card">
+      <div className="benefit-image-container">
+        <Image
+          src={image}
+          alt={title}
+          width={100}
+          height={100}
+          className="benefit-image"
+        />
+      </div>
       <h5 className="benefit-heading">{title}</h5>
       <p className="benefit-description">{description}</p>
     </div>
@@ -181,7 +199,6 @@ const ServicesSection = () => {
       <p className="services-subtitle">
         Explore the range of services we offer.
       </p>
-
       <div className="services-container">
         <div className="sample">
           <div className="services-row">
@@ -220,7 +237,6 @@ const ServicesSection = () => {
               </div>
             </div>
           </div>
-
           <div className="service-details-row">
             <div className="extended-box">
               <div className="service-image-container">
@@ -268,9 +284,7 @@ export default function Home() {
         <title>Duct Cleaning Services</title>
         <meta name="description" content="Professional duct cleaning services for a healthier home. Fast, reliable, and affordable." />
       </Head>
-
       <Header />
-
       <main className="main-content">
         {/* Home Section */}
         <section id="home" className="home-section" data-aos="fade-in">
@@ -309,27 +323,35 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Services Section */}
         <ServicesSection />
-
         {/* Benefits Section */}
         <section id="benefits" className="section benefits-section" data-aos="fade-up">
-          <h2 className="benefits-title" data-aos="fade-up">Benefits of Duct Cleaning</h2>
-          <p className="benefits-subtitle" data-aos="fade-up" data-aos-delay="200">
-            Discover why cleaning your ducts is essential for your home.
-          </p>
-          <div className="benefits-container" data-aos="fade-up" data-aos-delay="400">
-            {benefitsData.map((benefit, index) => (
-              <BenefitCard
-                key={index}
-                title={benefit.title}
-                description={benefit.description}
+          <div className="benefits-container">
+            <div className="benefits-left" data-aos="fade-right">
+              <Image
+                src="/benefits-image.svg"
+                alt="Benefits of Duct Cleaning"
+                fill
+                sizes="100vw"
+                className="benefits-image"
               />
-            ))}
+              <div className="benefits-text-overlay">
+                <h2 className="benefits-title">Benefits of Duct Cleaning</h2>
+              </div>
+            </div>
+            <div className="benefits-right" data-aos="fade-left">
+              {benefitsData.map((benefit, index) => (
+                <BenefitCard
+                  key={index}
+                  title={benefit.title}
+                  description={benefit.description}
+                  image={benefit.image}
+                />
+              ))}
+            </div>
           </div>
         </section>
-
         {/* How It Works Section */}
         <section id="how-it-works" className="section how-it-works-section" data-aos="fade-up">
           <h2 className="how-it-works-title" data-aos="fade-up">How It Works</h2>
@@ -347,7 +369,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
         {/* Testimonials Section */}
         <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
           <div className="testimonials-person-container" data-aos="fade-right">
@@ -380,7 +401,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* About Us Section */}
         <section id="about-us" className="section about-us-section" data-aos="fade-up">
           <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
@@ -396,7 +416,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-
         {/* FAQ Section (Accordion Style) */}
         <section id="faq" className="section faq-section" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
@@ -412,7 +431,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
         {/* Contact Us Section */}
         <section id="contact-us" className="section contact-us-section" data-aos="fade-up">
           <div className="contact-content-wrapper">
@@ -449,7 +467,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Areas We Serve Section */}
         <section id="areas-we-serve" className="section areas-we-serve" data-aos="fade-up">
           <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
@@ -468,7 +485,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   );
