@@ -350,22 +350,33 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
+          <div className="testimonials-person-container" data-aos="fade-right">
+            <Image
+              src="/what-customer-say-person.svg"
+              alt="Customer testimonial illustration"
+              width={500}
+              height={500}
+              className="testimonials-person-image"
+            />
+          </div>
           <div className="testimonials-box" data-aos="zoom-in">
-            <h2 className="testimonials-title" data-aos="fade-up" data-aos-delay="200">
-              What Our Customers Say
-            </h2>
-            <p className="testimonials-subtitle" data-aos="fade-up" data-aos-delay="400">
-              Hear from happy homeowners we&apos;ve helped.
-            </p>
-            <div className="testimonials-container" data-aos="fade-up" data-aos-delay="600">
-              {testimonialsData.map((testimonial, index) => (
-                <TestimonialCard
-                  key={index}
-                  name={testimonial.name}
-                  profilePic={testimonial.profilePic}
-                  review={testimonial.review}
-                />
-              ))}
+            <div className="testimonials-content-container">
+              <h2 className="testimonials-title" data-aos="fade-up" data-aos-delay="200">
+                What Our Customers Say
+              </h2>
+              <p className="testimonials-subtitle" data-aos="fade-up" data-aos-delay="400">
+                Hear from happy homeowners we&apos;ve helped.
+              </p>
+              <div className="testimonials-container" data-aos="fade-up" data-aos-delay="600">
+                {testimonialsData.map((testimonial, index) => (
+                  <TestimonialCard
+                    key={index}
+                    name={testimonial.name}
+                    profilePic={testimonial.profilePic}
+                    review={testimonial.review}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

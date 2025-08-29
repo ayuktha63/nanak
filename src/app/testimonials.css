@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Testimonials Section Styles */
 .testimonials-section {
   padding: 4rem 1rem;
@@ -5,6 +7,24 @@
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
+  position: relative;
+}
+
+.testimonials-person-container {
+  position: absolute;
+  /* top: 0; */
+  right: -80px;
+  bottom: 56px;
+  width: auto;
+  height: auto;
+  z-index: 2;
+}
+
+.testimonials-person-image {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 .testimonials-box {
@@ -12,14 +32,22 @@
   background: #A7E231;
   padding: 2rem;
   width: 100%;
-min-height: 613px; 
   max-width: 1380px;
+  min-height: 613px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   box-sizing: border-box;
+  z-index: 1;
+}
+
+.testimonials-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .testimonials-title {
@@ -29,13 +57,13 @@ min-height: 613px;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   line-height: 48px; /* 120% */
 }
 
 .testimonials-subtitle {
-  margin-top:0px;
-  margin-bottom:50px;
+  margin-top: 0;
+  margin-bottom: 50px;
   color: #FFF;
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
@@ -43,7 +71,6 @@ min-height: 613px;
   font-weight: 500;
   line-height: 24px; /* 120% */
   text-align: center;
-  /* margin: 0 auto ; */
 }
 
 .testimonials-container {
@@ -80,7 +107,7 @@ min-height: 613px;
 .testimonial-name {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
-  width:150px;
+  width: 150px;
   font-weight: 600;
   color: #000;
 }
@@ -126,9 +153,12 @@ min-height: 613px;
     max-width: 100%;
   }
 
+  .testimonials-person-container {
+    display: none; /* Hide image on mobile */
+  }
+
   .testimonials-box {
     padding: 1.5rem;
-    border-radius: 23px;
   }
 
   .testimonials-title {
