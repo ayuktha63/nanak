@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Global Styles for Smooth Scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  touch-action: auto; /* Allow touch scrolling */
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
 /* Home Section Styles */
 .home-section {
   display: flex;
@@ -11,6 +26,7 @@
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
+  overflow: hidden; /* Prevent horizontal scroll */
 }
 
 .hero-box {
@@ -24,7 +40,7 @@
   justify-content: center;
   border-radius: 23px;
   background-color: #A7E231;
-  height: 548px;
+  min-height: 548px; /* Changed to min-height for flexibility */
   overflow: hidden;
   padding: 2rem 0;
   gap: 2rem;
@@ -41,10 +57,14 @@
   justify-content: flex-start;
   padding-right: 3rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hero-person-image {
   max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .hero-content-container {
@@ -120,10 +140,10 @@
   transform: translateY(-50%);
   right: 1rem;
   z-index: 3;
+  pointer-events: none; /* Prevent interference with touch events */
 }
 
 .logo-box {
-  background-color: #fff;
   border-radius: 23px;
   padding: 1rem;
   width: 200px;
@@ -132,6 +152,7 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
+  box-sizing: border-box;
 }
 
 /* Services Section Styles */
@@ -302,12 +323,16 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .benefits-left {
   position: relative;
   width: 100%;
-  height: 400px;
+  min-height: 300px; /* Changed to min-height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .benefits-image {
@@ -319,6 +344,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 .benefits-text-overlay {
@@ -329,15 +355,17 @@
   background: rgba(255, 255, 255, 0.67);
   border: 1px solid #fff;
   backdrop-filter: blur(30px);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
-  white-space: nowrap;
+  max-width: 90%;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
 .benefits-title {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(28px, 7vw, 40px);
+  font-size: clamp(24px, 6vw, 32px);
   font-style: normal;
   font-weight: 700;
   line-height: 1.2;
@@ -346,7 +374,7 @@
 
 .benefits-right {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
 }
@@ -408,10 +436,10 @@
   color: #000;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px);
   font-style: normal;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.2;
   margin-bottom: 2rem;
 }
 
@@ -445,9 +473,9 @@
 }
 
 .faq-title {
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px);
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.2;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -570,30 +598,29 @@
 .contact-title {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px);
   font-style: normal;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
 .contact-subtitle {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  margin-top: 0;
+  line-height: 1.4;
 }
 
 .contact-details {
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.4;
 }
 
 .contact-details p {
@@ -676,8 +703,9 @@
   color: rgba(0, 0, 0, 0.76);
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(28px, 7vw, 40px);
   font-weight: 700;
+  line-height: 1.2;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
@@ -752,6 +780,9 @@
     height: auto;
     width: auto;
     z-index: 3;
+    max-width: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Prevent touch interference */
   }
 
   .hero-logo-container {
@@ -770,15 +801,24 @@
 
   .benefits-container {
     flex-direction: row;
+    padding: 0;
   }
 
   .benefits-left {
     width: 50%;
-    height: 600px;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
   }
 
   .benefits-right {
     width: 50%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .benefits-text-overlay {
+    padding: 2rem;
+    max-width: 80%;
   }
 
   .contact-content-wrapper {
@@ -805,6 +845,17 @@
 @media (max-width: 1023px) {
   .hero-person-container {
     display: none;
+  }
+
+  .hero-logo-container {
+    right: 1rem;
+    width: 150px;
+  }
+
+  .logo-box {
+    width: 150px;
+    height: 150px;
+    padding: 0.5rem;
   }
 
   .areas-we-serve {
@@ -835,7 +886,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: auto;
+    min-height: 400px;
   }
 
   .hero-content-container {
@@ -885,7 +936,14 @@
   }
 
   .benefits-left {
-    height: 300px;
+    min-height: 300px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .benefits-text-overlay {
+    padding: 1rem;
+    max-width: 95%;
   }
 
   .benefits-right {
@@ -936,6 +994,13 @@
     max-width: 100%;
     padding: 0 1rem;
     text-align: center;
+  }
+
+  /* Disable AOS animations on mobile for performance */
+  [data-aos] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -1022,6 +1087,9 @@
     left: -100px;
     height: 600px;
     width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    pointer-events: none;
   }
 
   .services-section {
@@ -1066,7 +1134,7 @@
 
   .hero-box {
     padding: 1rem;
-    height: auto;
+    min-height: 400px;
   }
 
   .hero-content-container {
@@ -1141,7 +1209,7 @@
   .hero-box {
     flex-direction: row;
     padding: 1.5rem;
-    height: auto;
+    min-height: 400px;
   }
 
   .hero-content-container {
@@ -1152,16 +1220,18 @@
   .hero-image-container {
     width: 40%;
     padding-right: 1.5rem;
+    overflow: hidden;
   }
 
   .hero-logo-container {
-    right: 1.5rem;
+    right: 1rem;
+    width: 200px;
   }
 
   .logo-box {
-    width: 300px;
-    height: 300px;
-    padding: 1.5rem;
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
   }
 
   .contact-content-wrapper {
