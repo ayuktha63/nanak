@@ -123,15 +123,15 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
-            <div className="big-image-container">
-              <Image
-                src="/seven-years-of-experience.svg"
-                alt="Our team at work"
-                width={1440}
-                height={500}
-                className="big-service-image"
-              />
-            </div>
+        <div className="big-image-container">
+          <Image
+            src="/seven-years-of-experience.svg"
+            alt="Our team at work"
+            width={475} /* Adjusted from 1440 to prevent overflow */
+            height={500}
+            className="big-service-image"
+          />
+        </div>
       </div>
     </section>
   );
@@ -213,9 +213,9 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="section container mx-auto" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
-          <p className="text-lg text-gray-700">
+        <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
+          <h2 className="testimonials-title">What Our Customers Say</h2>
+          <p className="testimonials-text">
             Read reviews from satisfied clients who have experienced our service firsthand.
           </p>
         </section>
@@ -278,7 +278,7 @@ export default function Home() {
           <div className="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5731747723944!2d-79.72572072433802!3d43.740192946800825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84d1c08d7e37c381%3A0xba0e7a9314944ed9!2sNanak%20duct%20cleaning!5e0!3m2!1sen!2sin!4v1756155577044!5m2!1sen!2sin"
-              width="1100"
+              width="100%" /* Made responsive */
               height="300"
               style={{ border: 0 }}
               allowFullScreen=""
