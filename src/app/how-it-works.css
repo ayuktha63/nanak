@@ -35,16 +35,15 @@
 .how-it-works-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* Changed from nowrap to wrap */
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: center; /* Changed from space-between to center for better mobile alignment */
   width: 100%;
   box-sizing: border-box;
 }
 
 .how-it-works-step {
-  flex: 1;
-  min-width: 250px;
+  flex: 1 1 250px; /* Added flex-grow and flex-shrink to a more appropriate base width */
   max-width: 400px;
   height: auto;
   border-radius: 6px;
@@ -104,6 +103,8 @@
 
   .how-it-works-container {
     gap: 1.5rem;
+    flex-wrap: nowrap; /* Added to keep items in a single row */
+    justify-content: space-between; /* Adjusted for desired large screen layout */
   }
 
   .how-it-works-step {
@@ -124,20 +125,11 @@
   }
 }
 
+/* Added specific mobile-first styles for better control */
 @media (max-width: 767px) {
   .how-it-works-section {
     padding: 3rem 1rem;
     max-width: 100%;
-  }
-
-  .how-it-works-title {
-    font-size: clamp(24px, 6vw, 32px);
-    line-height: 1.2;
-  }
-
-  .how-it-works-subtitle {
-    font-size: clamp(14px, 3.5vw, 16px);
-    line-height: 1.4;
   }
 
   .how-it-works-container {
@@ -145,8 +137,9 @@
   }
 
   .how-it-works-step {
-    min-width: 200px;
-    max-width: 300px;
+    flex: 1 1 100%; /* Changed to stack items on mobile */
+    min-width: unset;
+    max-width: unset;
     padding: 0.75rem;
   }
 
@@ -174,8 +167,7 @@
   }
 
   .how-it-works-step {
-    min-width: 160px;
-    max-width: 200px;
+    flex: 1 1 100%; /* Ensures they remain stacked */
     padding: 0.5rem;
   }
 
