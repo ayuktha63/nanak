@@ -1,4 +1,3 @@
-/* page.js */
 'use client';
 
 import { useState } from 'react';
@@ -6,13 +5,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-// Import the dedicated CSS files for this page
 import './home.css';
 import './testimonials.css';
 import './how-it-works.css';
 
-// Data for the areas we serve
+// Data for areas, faq, testimonials, benefits, howItWorks (unchanged)
 const areas = [
   ['Toronto', 'Mississauga', 'Brampton', 'Etobicoke', 'Vaughan', 'North York', 'Milton', 'East York'],
   ['Scarborough', 'Pickering', 'Ajax', 'Whitby', 'Acton', 'Aurora', 'Bolton', 'Brantford'],
@@ -20,7 +17,6 @@ const areas = [
   ['Orangeville', 'Richmond Hill', 'Woodbridge', 'London', 'Windsor', 'Niagara Falls', 'Hamilton', 'Kitchener'],
 ];
 
-// Data for the FAQ section
 const faqData = [
   {
     question: "Why should I get my air ducts cleaned?",
@@ -44,7 +40,6 @@ const faqData = [
   },
 ];
 
-// Data for the testimonials section
 const testimonialsData = [
   {
     name: "John Doe",
@@ -63,7 +58,6 @@ const testimonialsData = [
   },
 ];
 
-// Data for the benefits section
 const benefitsData = [
   {
     title: "Improved Air Quality",
@@ -87,7 +81,6 @@ const benefitsData = [
   },
 ];
 
-// Data for the how it works section
 const howItWorksData = [
   {
     step: "Step 1: Inspection",
@@ -106,7 +99,7 @@ const howItWorksData = [
   },
 ];
 
-// Reusable component for the accordion-style FAQ
+// Reusable components (unchanged)
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="faq-item">
@@ -121,7 +114,6 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
   );
 };
 
-// Reusable component for testimonial card
 const TestimonialCard = ({ name, profilePic, review }) => {
   return (
     <div className="testimonial-card">
@@ -152,7 +144,6 @@ const TestimonialCard = ({ name, profilePic, review }) => {
   );
 };
 
-// Reusable component for benefits card
 const BenefitCard = ({ title, description, image }) => {
   return (
     <div className="benefit-card">
@@ -171,7 +162,6 @@ const BenefitCard = ({ title, description, image }) => {
   );
 };
 
-// Reusable component for how it works step
 const HowItWorksStep = ({ step, description, image }) => {
   return (
     <div className="how-it-works-step">
@@ -192,7 +182,6 @@ const HowItWorksStep = ({ step, description, image }) => {
   );
 };
 
-// Services Section Component
 const ServicesSection = () => {
   return (
     <section id="services" className="services-section">
@@ -224,7 +213,7 @@ const ServicesSection = () => {
               <div className="service-image-container">
                 <Image
                   src="/commercial-air-duct-cleaning.svg"
-                  alt="Commercial Air duct Cleaning"
+                  alt="Commercial Air Duct Cleaning"
                   width={200}
                   height={200}
                   className="service-image"
@@ -279,6 +268,19 @@ export default function Home() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
+  // Function to scroll to Contact Us section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Function to open WhatsApp link
+  const openWhatsApp = () => {
+    window.open('https://wa.me/14167291521', '_blank');
+  };
+
   return (
     <>
       <Head>
@@ -287,7 +289,6 @@ export default function Home() {
       </Head>
       <Header />
       <main className="main-content">
-        {/* Home Section */}
         <section id="home" className="home-section" data-aos="fade-in">
           <div className="hero-person-container" data-aos="fade-right">
             <Image
@@ -307,8 +308,8 @@ export default function Home() {
                 Improve your home&apos;s air quality with our expert cleaning.
               </p>
               <div className="button-group" data-aos="fade-up" data-aos-delay="600">
-                <button className="book-now-button">Book Now</button>
-                <button className="get-quote-button">Get a Free Quote</button>
+                <button className="book-now-button" onClick={scrollToContact}>Book Now</button>
+                <button className="get-quote-button" onClick={openWhatsApp}>Get a Free Quote</button>
               </div>
             </div>
             <div className="hero-logo-container">
@@ -324,9 +325,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Services Section */}
         <ServicesSection />
-        {/* Benefits Section */}
         <section id="benefits" className="section benefits-section" data-aos="fade-up">
           <div className="benefits-container">
             <div className="benefits-left" data-aos="fade-right">
@@ -353,7 +352,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* How It Works Section */}
         <section id="how-it-works" className="section how-it-works-section" data-aos="fade-up">
           <h2 className="how-it-works-title" data-aos="fade-up">How It Works</h2>
           <p className="how-it-works-subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -370,7 +368,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* Testimonials Section */}
         <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
           <div className="testimonials-person-container" data-aos="fade-right">
             <Image
@@ -402,7 +399,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* About Us Section */}
         <section id="about-us" className="section about-us-section" data-aos="fade-up">
           <h2 className="about-us-title" data-aos="fade-up">About Us</h2>
           <div className="about-us-box" data-aos="zoom-in">
@@ -417,7 +413,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-        {/* FAQ Section (Accordion Style) */}
         <section id="faq" className="section faq-section" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
           <div className="faq-container">
@@ -432,7 +427,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* Contact Us Section */}
         <section id="contact-us" className="section contact-us-section" data-aos="fade-up">
           <div className="contact-content-wrapper">
             <div className="contact-left" data-aos="fade-right">
@@ -468,7 +462,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Areas We Serve Section */}
         <section id="areas-we-serve" className="section areas-we-serve" data-aos="fade-up">
           <h2 className="areas-title" data-aos="fade-up">Areas We Serve</h2>
           <div className="areas-list" data-aos="fade-up" data-aos-delay="200">

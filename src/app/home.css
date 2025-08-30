@@ -402,7 +402,7 @@ html, body {
 }
 
 .benefit-heading {
-  color: #000;
+  color: #FFFFFF;
   font-family: 'Raleway', sans-serif;
   font-size: clamp(16px, 4vw, 18px);
   font-weight: 700;
@@ -411,7 +411,7 @@ html, body {
 }
 
 .benefit-description {
-  color: #666;
+  color: #FFFFFF;
   font-family: 'Raleway', sans-serif;
   font-size: clamp(14px, 3.5vw, 16px);
   line-height: 1.5;
@@ -446,7 +446,7 @@ html, body {
   max-width: 1358px;
   height: auto;
   padding: 3rem 2rem;
-  border-radius: 300px 300px 23px 300px;
+  border-radius: 250px 250px 23px 250px;
   background: #AEE441;
   color: #fff;
   font-size: 1.125rem;
