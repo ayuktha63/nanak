@@ -195,7 +195,7 @@ const ServicesSection = () => {
             <div className="service-box">
               <div className="service-image-container">
                 <Image
-                  src="/dryer-vent-cleaning.svg"
+                  src="/dryer-vent-cleaning.webp"
                   alt="Duct Cleaning"
                   width={200}
                   height={200}
