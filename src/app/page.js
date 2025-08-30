@@ -319,6 +319,7 @@ export default function Home() {
                   alt="Company Logo"
                   width={400}
                   height={400}
+                  className='logo-image'
                   objectFit="contain"
                 />
               </div>
