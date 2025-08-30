@@ -761,8 +761,8 @@ html, body {
   }
 
   .hero-content-container {
-    width: 50%;
-    padding-left: 1.5rem;
+    width: 70%;
+    padding-left: 1rem;
     padding-right: 3rem;
   }
 
@@ -773,8 +773,8 @@ html, body {
   .hero-person-container {
     display: block;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: -10%;
+    bottom: 8.5%;
     height: auto;
     width: auto;
     z-index: 3;
@@ -1259,5 +1259,104 @@ html, body {
 
   .areas-title {
     text-align: center;
+  }
+}
+/* ==================== YOUR EXISTING MEDIA QUERIES ==================== */
+/* ... (everything you pasted stays the same) ... */
+
+/* Tablet view in portrait (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  .hero-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: 450px;
+  }
+
+  .hero-content-container {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    margin-top: 1.5rem;
+    overflow: hidden;
+  }
+
+  .hero-logo-container {
+    right: 1rem;
+    width: 180px;
+  }
+
+  .logo-box {
+    width: 180px;
+    height: 180px;
+    padding: 0.75rem;
+  }
+
+  .contact-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .contact-left,
+  .contact-middle,
+  .contact-right {
+    width: 100%;
+  }
+}
+
+/* Tablet view in landscape (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+  .hero-box {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+    min-height: 500px;
+  }
+
+  .hero-content-container {
+    width: 60%;
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .hero-image-container {
+    width: 40%;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .hero-logo-container {
+    right: 2rem;
+    width: 220px;
+  }
+
+  .logo-box {
+    width: 220px;
+    height: 220px;
+    padding: 1rem;
+  }
+
+  .contact-content-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .contact-left {
+    width: 45%;
+  }
+
+  .contact-middle {
+    width: 45%;
+    text-align: left;
+  }
+
+  .contact-right {
+    width: 100%;
   }
 }
