@@ -292,7 +292,7 @@ export default function Home() {
         <section id="home" className="home-section" data-aos="fade-in">
           <div className="hero-person-container" data-aos="fade-right">
             <Image
-              src="/home-person.svg"
+              src="/home-person.webp"
               alt="A person performing a duct cleaning service"
               width={500}
               height={500}
