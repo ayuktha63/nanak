@@ -118,7 +118,6 @@
     height: 60px;
   }
 }
-
 /* Tablet Portrait (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
   :root {
@@ -137,12 +136,14 @@
   .how-it-works-container {
     flex-direction: column;
     gap: var(--primary-gap);
+    align-items: center; /* Added to center boxes horizontally */
   }
 
   .how-it-works-step {
     flex: 1 1 100%;
     padding: 1rem;
-    max-width: 500px;
+    max-width: 500px; /* Already set, keeps boxes from stretching too wide */
+    width: 100%; /* Ensures consistent width */
   }
 
   .how-it-works-image-container {
