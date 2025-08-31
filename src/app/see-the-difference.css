@@ -62,6 +62,7 @@
   max-width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .see-the-difference-card {
@@ -113,6 +114,7 @@
     flex-direction: row; /* Keep row layout */
     justify-content: center; /* Center the cards */
     width: 100%; /* Maintain full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-card {
@@ -144,20 +146,22 @@
 
   .see-the-difference-section {
     padding: 3rem 1.5rem;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-container {
-    flex-direction: column; /* Column layout for tablets */
+    flex-direction: row; /* Row layout for tablets */
     gap: var(--primary-gap);
     justify-content: center;
     align-items: center; /* Center align items */
-    width: 600px; /* Scaled proportionally (900px * 768/1440) */
-    max-width: 100%;
+    width: 100%; /* Use full width to avoid overflow */
+    max-width: 700px; /* Adjusted to fit cards comfortably */
     margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-card {
-    flex: 1 1 auto; /* Allow cards to take natural size */
+    flex: 1 1 45%;
     width: 300px; /* Scaled proportionally */
     height: 265px;
     padding: 1rem;
@@ -184,20 +188,22 @@
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
   .see-the-difference-section {
     padding: 3rem 2rem;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-container {
-    flex-direction: column; /* Column layout for tablets */
+    flex-direction: row; /* Row layout for tablets */
     gap: 1.5rem;
     justify-content: center;
     align-items: center; /* Center align items */
-    width: 738px; /* Scaled proportionally (900px * 1180/1440) */
-    max-width: 100%;
+    width: 100%; /* Use full width to avoid overflow */
+    max-width: 900px; /* Adjusted to fit cards comfortably */
     margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-card {
-    flex: 1 1 auto; /* Allow cards to take natural size */
+    flex: 1 1 45%;
     width: 340px; /* Scaled proportionally */
     height: 300px;
     padding: 1.5rem;
@@ -242,6 +248,7 @@
     width: 850px; /* Approaching 900px */
     max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-card {
@@ -280,6 +287,7 @@
     width: 900px; /* Matches requested width */
     max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .see-the-difference-card {
