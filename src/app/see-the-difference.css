@@ -18,6 +18,7 @@
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+  overflow-y: hidden; /* Prevent vertical scrolling */
 }
 
 .see-the-difference-person-container {
@@ -26,11 +27,11 @@
 
 .see-the-difference-person-image {
   object-fit: contain;
-  width: 150%;
-  height: 150%;
+  width: 100%; /* Adjusted from 150% to prevent overflow */
+  height: 100%; /* Adjusted from 150% to prevent overflow */
   position: relative;
-  left: -100px;
-  top: -200px;
+  left: 0; /* Reset to avoid negative offset */
+  top: 0; /* Reset to avoid negative offset */
   z-index: 0;
 }
 
@@ -63,6 +64,7 @@
   box-sizing: border-box;
   margin: 0 auto;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
 }
 
 .see-the-difference-card {
@@ -107,6 +109,7 @@
 @media (max-width: 479px) {
   .see-the-difference-section {
     padding: 2rem 0.5rem;
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-container {
@@ -115,6 +118,7 @@
     justify-content: center; /* Center the cards */
     width: 100%; /* Maintain full width */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-card {
@@ -147,6 +151,7 @@
   .see-the-difference-section {
     padding: 3rem 1.5rem;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-container {
@@ -158,6 +163,7 @@
     max-width: 700px; /* Adjusted to fit cards comfortably */
     margin: 0 auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-card {
@@ -181,6 +187,7 @@
     width: 200px;
     height: 200px;
     z-index: 999999; /* Ensure it stays on top */
+    overflow: hidden; /* Contain the image */
   }
 }
 
@@ -189,6 +196,7 @@
   .see-the-difference-section {
     padding: 3rem 2rem;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-container {
@@ -200,6 +208,7 @@
     max-width: 900px; /* Adjusted to fit cards comfortably */
     margin: 0 auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-card {
@@ -223,6 +232,7 @@
     width: 250px;
     height: 250px;
     z-index: 999999; /* Ensure it stays on top */
+    overflow: hidden; /* Contain the image */
   }
 }
 
@@ -239,6 +249,7 @@
 
   .see-the-difference-section {
     padding: 4rem 2rem;
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-container {
@@ -249,6 +260,7 @@
     max-width: 100%;
     margin: 0 auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-card {
@@ -267,11 +279,12 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 48%;
     transform: translateY(-50%);
     width: 300px;
     height: 300px;
     z-index: 999999; /* Ensure it stays on top */
+    overflow: hidden; /* Contain the image */
   }
 }
 
@@ -280,6 +293,7 @@
   .see-the-difference-section {
     padding: 4rem 3rem;
     max-width: 1440px;
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-container {
@@ -288,6 +302,7 @@
     max-width: 100%;
     margin: 0 auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
   }
 
   .see-the-difference-card {
@@ -305,6 +320,7 @@
     width: 350px;
     height: 350px;
     z-index: 999999; /* Ensure it stays on top */
+    overflow: hidden; /* Contain the image */
   }
 }
 
