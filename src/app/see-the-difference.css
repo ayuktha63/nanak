@@ -181,8 +181,8 @@
   .see-the-difference-person-container {
     display: block; /* Show on tablets */
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: -5%;
+    top: 56%;
     transform: translateY(-50%);
     width: 200px;
     height: 200px;

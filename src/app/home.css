@@ -753,7 +753,6 @@ html, body {
     gap: 0;
     z-index: 2;
   }
-
   .hero-image-container {
     width: 50%;
     padding-left: 3rem;
@@ -849,7 +848,6 @@ html, body {
     right: 1rem;
     width: 150px;
   }
-
   .logo-box {
     width: 150px;
     height: 150px;
@@ -1315,6 +1313,9 @@ html, body {
   .contact-right {
     width: 100%;
   }
+  .about-us-box{
+    border-radius: 20px 100px 20px 100px;
+  }
 }
 
 /* Tablet view in landscape (992px to 1199px) */
@@ -1367,4 +1368,5 @@ html, body {
   .contact-right {
     width: 100%;
   }
+
 }
