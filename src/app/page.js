@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import './home.css';
 import './testimonials.css';
 import './how-it-works.css';
+import './see-the-difference.css';
 
 // Data for areas, faq, testimonials, benefits, howItWorks (unchanged)
 const areas = [
@@ -261,6 +262,59 @@ const ServicesSection = () => {
   );
 };
 
+// New SeeTheDifferenceCard component
+const SeeTheDifferenceCard = ({ title, image }) => {
+  return (
+    <div className="see-the-difference-card">
+      <div className="see-the-difference-image-container">
+        <Image
+          src={image}
+          alt={title}
+          width={315}
+          height={248}
+          className="see-the-difference-image"
+        />
+      </div>
+      <h5 className="see-the-difference-heading">{title}</h5>
+    </div>
+  );
+};
+
+// New SeeTheDifferenceSection component
+const SeeTheDifferenceSection = () => {
+  return (
+    <section id="see-the-difference" className="section see-the-difference-section" data-aos="fade-up">
+      <div className="see-the-difference-person-container" data-aos="fade-right">
+        <Image
+          src="/see-the-difference-person.svg"
+          alt="See the difference illustration"
+          width={500}
+          height={500}
+          className="see-the-difference-person-image"
+        />
+      </div>
+      <div className="see-the-difference-box" data-aos="zoom-in">
+        <h2 className="see-the-difference-title" data-aos="fade-up" data-aos-delay="200">
+          See the Difference
+        </h2>
+        <p className="see-the-difference-subtitle" data-aos="fade-up" data-aos-delay="400">
+          Before and after duct cleaning results.
+        </p>
+        <div className="see-the-difference-container" data-aos="fade-up" data-aos-delay="600">
+          <SeeTheDifferenceCard
+            title="Before Cleaning"
+            image="/before-cleaning.svg"
+          />
+          <SeeTheDifferenceCard
+            title="After Cleaning"
+            image="/after-cleaning.svg"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
@@ -369,6 +423,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        <SeeTheDifferenceSection />
         <section id="testimonials" className="section testimonials-section" data-aos="fade-up">
           <div className="testimonials-person-container" data-aos="fade-right">
             <Image
