@@ -30,8 +30,7 @@
   height: 150%;
   position: relative;
   left: -100px;
-  top:-200px;
-  /* max-width: 100%; */
+  top: -200px;
   z-index: 0;
 }
 
@@ -55,12 +54,14 @@
 
 .see-the-difference-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Row layout for mobile */
   gap: var(--primary-gap);
-  justify-content: center;
+  justify-content: center; /* Center the cards */
+  align-items: center;
   width: 100%; /* Full width for mobile */
   max-width: 100%;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .see-the-difference-card {
@@ -76,7 +77,6 @@
   align-items: center;
   text-align: center;
   gap: var(--primary-gap);
-  /* z-index: 99999999; */
 }
 
 .see-the-difference-image-container {
@@ -110,6 +110,8 @@
 
   .see-the-difference-container {
     gap: 0.5rem;
+    flex-direction: row; /* Keep row layout */
+    justify-content: center; /* Center the cards */
     width: 100%; /* Maintain full width */
   }
 
@@ -122,6 +124,10 @@
   .see-the-difference-image-container {
     width: 166px; /* Scaled proportionally */
     height: 130px;
+  }
+
+  .see-the-difference-person-container {
+    display: none; /* Explicitly hide on small mobile */
   }
 }
 
@@ -141,16 +147,17 @@
   }
 
   .see-the-difference-container {
-    flex-direction: row;
+    flex-direction: column; /* Column layout for tablets */
     gap: var(--primary-gap);
     justify-content: center;
+    align-items: center; /* Center align items */
     width: 600px; /* Scaled proportionally (900px * 768/1440) */
     max-width: 100%;
     margin: 0 auto;
   }
 
   .see-the-difference-card {
-    flex: 1 1 45%;
+    flex: 1 1 auto; /* Allow cards to take natural size */
     width: 300px; /* Scaled proportionally */
     height: 265px;
     padding: 1rem;
@@ -162,7 +169,7 @@
   }
 
   .see-the-difference-person-container {
-    display: block;
+    display: block; /* Show on tablets */
     position: absolute;
     left: 0;
     top: 50%;
@@ -180,16 +187,17 @@
   }
 
   .see-the-difference-container {
-    flex-direction: row;
+    flex-direction: column; /* Column layout for tablets */
     gap: 1.5rem;
     justify-content: center;
+    align-items: center; /* Center align items */
     width: 738px; /* Scaled proportionally (900px * 1180/1440) */
     max-width: 100%;
     margin: 0 auto;
   }
 
   .see-the-difference-card {
-    flex: 1 1 300px;
+    flex: 1 1 auto; /* Allow cards to take natural size */
     width: 340px; /* Scaled proportionally */
     height: 300px;
     padding: 1.5rem;
@@ -201,7 +209,7 @@
   }
 
   .see-the-difference-person-container {
-    display: block;
+    display: block; /* Show on tablets */
     position: absolute;
     left: 0;
     top: 50%;
