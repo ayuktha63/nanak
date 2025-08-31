@@ -159,6 +159,7 @@ html, body {
   text-align: center;
   width: 100%;
   max-width: 1440px;
+    overflow-x: hidden;
   margin: 0 auto;
   box-sizing: border-box;
 }
